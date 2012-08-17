@@ -3,20 +3,21 @@ release
 compiled_handlebars.js
 *.handlebars.js
 
-#ignore private config files
-ifield.key
-ifield.orig.key
-ifield.csr
-ifield.crt
+#ignore security certificates
+sails.key
+sails.csr
+sails.crt
 
+#ignore config files
 couchkeys.js
 everyauthconfig.js
 
-# Ignore natural lib 
-public/libs/natural/
-
-.wav
+# Experimental Design Files #
+#############################
 audio_stimuli
+image_stimuli
+*design.json
+
 
 .idea
 .project
@@ -25,8 +26,10 @@ audio_stimuli
 proguard.cfg
 
 node_modules
-bin
-gen
+
+# Android files #
+bin/
+gen/
 
 
 

@@ -43,7 +43,7 @@ Utils.activityFeedCouchUrl = "http://localhost:5984/activity_feed";
  * The url of the authentication server.
  */
 
-//Utils.authUrl = "https://ifield.fieldlinguist.com";//"https://localhost:3001";
+//Utils.authUrl = "https://sails.ilanguage.ca";//"https://localhost:3001";
 Utils.authUrl = "https://localhost:3001";
 /**
  * The parameters of the default couch server.

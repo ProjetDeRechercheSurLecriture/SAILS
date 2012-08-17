@@ -1,7 +1,7 @@
 {
-  "name": "Drag and Drop FieldLinguistics Tests",
+  "name": "SAILS Tests",
   "version": "1.0",
-  "description": "A way for the developers to test the Drag and Drop FieldLinguistics App",
+  "description": "A way for the developers to test the SAILS App",
   "app": {
     "launch": {
       "local_path": "./tests/jasmine.html"

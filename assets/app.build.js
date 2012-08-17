@@ -10,7 +10,7 @@
 //    max_line_length: 1000
 //  },
 //  inlineText: true,
-//  namespace: 'ifield',
+//  namespace: 'sails',
   skipModuleInsertion: false,
 //  stubModules: ['underscore', 'jquery','backbone'],
 //  wrap: {

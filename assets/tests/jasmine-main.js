@@ -6,16 +6,9 @@ require.config({
   paths : {
     "text" : "libs/text",
     "jquery" : "libs/jquery",
-    "hotkeys" : "libs/jquery.hotkeys",
-    "terminal" : "libs/terminal/terminal",
     "underscore" : "libs/underscore",
     "backbone" : "libs/backbone",
     "handlebars" : "libs/handlebars.runtime",
-    "compiledTemplates" : "libs/compiled_handlebars",
-    "crypto" : "libs/Crypto_AES",
-    "pouch" : "libs/pouch.alpha",
-    "backbone_pouchdb" : "libs/backbone-pouchdb",
-    "backbone_couchdb" : "libs/backbone-couchdb",
     "bootstrap" : "bootstrap/js/bootstrap",
     "bootstrap-transition" : "bootstrap/js/bootstrap-transition",
     "bootstrap-alert" : "bootstrap/js/bootstrap-alert",
@@ -59,26 +52,9 @@ require.config({
       }
     },
     
-    "pouch" :{
-      exports: "Pouch"
-    },
-
     "backbone" : {
       deps : [ "underscore", "jquery", "compiledTemplates" ],
       exports : function(_, $) {
-        return Backbone;
-      }
-    },
-    "backbone_pouchdb" :{
-      deps : ["backbone", "pouch", "backbone_couchdb"],
-      exports : function(Backbone, Pouch, backbone_couchdb) {
-        return Backbone;
-      }
-    },
-    
-    "backbone_couchdb" :{
-      deps : ["backbone", "pouch"],
-      exports : function(Backbone, Pouch) {
         return Backbone;
       }
     },
@@ -86,47 +62,14 @@ require.config({
     "handlebars" : {
       deps : ["bootstrap","jquery"],
       exports : "Handlebars"
-    },
-
-    "crypto" : {
-      exports : "CryptoJS"
-    },
-
-    "compiledTemplates" : {
-      deps : [ "handlebars" ],
-      exports : function(Handlebars) {
-        return Handlebars;
-      }
-    },
-    "terminal" : {
-      deps : ["bootstrap","jquery"],
-      exports : "Terminal"
     }
+
     
   }
 });
 // Run the tests!
 require([
     // Put all your tests here. Otherwise they won't run
-    "../tests/activity/ActivityTest",
-    "../tests/authentication/AuthenticationTest",
-    "../tests/comment/CommentTest",
-   "../tests/confidentiality_encryption/ConfidentialTest", 
-   "../tests/corpus/CorpusTest",
-// "../tests/dashboard/DashboardTest",
-   "../tests/data_list/DataListTest",
-   "../tests/datum/DatumTest",
-   "../tests/export/ExportTest",
-   "../tests/glosser/GlosserTest",
-   "../tests/hotkey/HotKeyTest",
-   "../tests/import/ImportTest",
-   "../tests/insert_unicode/InsertUnicodeTest",
-   "../tests/lexicon/LexiconTest",
-   "../tests/permission/PermissionTest",
-   "../tests/user/UserPreferenceTest",
-   "../tests/search/SearchTest",
-  "../tests/session/SessionTest",
-   "../tests/user/UserGenericTest",
 
 
 ], function() {
