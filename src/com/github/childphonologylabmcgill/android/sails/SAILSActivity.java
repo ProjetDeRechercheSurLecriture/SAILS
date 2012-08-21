@@ -1,13 +1,21 @@
 package com.github.childphonologylabmcgill.android.sails;
 
-import android.app.Activity;
+import ca.ilanguage.oprime.activity.HTML5GameActivity;
 import android.os.Bundle;
+import android.util.Log;
 
-public class SAILSActivity extends Activity {
+public class SAILSActivity extends HTML5GameActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+    }
+    protected void setUpVariables(){
+    	if(D) Log.d(TAG, "Setting up sails acitivity variables.");
+    	this.mInitialGameServerUrl = 
+    			"file:///android_asset/public/sails.html";
+    	this.mJavaScriptInterface = new SAILSJavaScriptInterface(D, TAG, mOutputDir);
+    	this.mJavaScriptInterface.setContext(this);
     }
 }
