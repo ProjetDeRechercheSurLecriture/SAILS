@@ -14,7 +14,7 @@ public class SAILSActivity extends HTML5GameActivity {
     protected void setUpVariables(){
     	if(D) Log.d(TAG, "Setting up sails acitivity variables.");
     	this.mInitialGameServerUrl = 
-    			"file:///android_asset/public/sails.html";
+    			"file:///android_asset/release/sails.html";
     	this.mJavaScriptInterface = new SAILSJavaScriptInterface(D, TAG, mOutputDir);
     	this.mJavaScriptInterface.setContext(this);
     }
