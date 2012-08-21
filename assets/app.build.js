@@ -17,7 +17,7 @@
 //    start: "(function() {",
 //    end: "}());"
 //  },
-  mainConfigFile : "public/main.js",
+  mainConfigFile : "../../DyslexDisorthGame/assets/public/main_sails.js",
   modules : [ {
     name : "main"
   } ]
