@@ -11,7 +11,6 @@
   "permissions": [
     "unlimitedStorage"
   ],
-  "content_security_policy": "default-src 'self' https://*.phophlo.ca https://phophlo.iriscouch.com https://secure.gravatar.com https://localhost:* https://ssl.google-analytics.com ",
   "icons": {
     "16": "assets/img/icon16.png",
     "48": "assets/img/icon48.png",
