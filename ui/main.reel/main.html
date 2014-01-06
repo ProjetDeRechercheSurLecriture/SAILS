@@ -1,27 +1,31 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>SAILS</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-responsive.css" >
-  <link rel="stylesheet" type="text/css" href="./app/app.css">
-  <link rel="stylesheet" type="text/css" href="./font_awesome/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="./app/app_opaque.css">
-  
-  <!-- END Stylesheets -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Main</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script type="text/montage-serialization">
+        {
+            "owner": {
+                "properties": {
+                    "element": {"#": "main"}
+                }
+            },
+
+            "montageVersion": {
+                "prototype": "ui/version.reel",
+                "properties": {
+                    "element": {"#": "montageVersion"}
+                }
+            }
+        }
+    </script>
 </head>
-<body id="app" class="sails-layout">
-  <div id="app_view" ></div>
-
-  
-  <!-- Le javascript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-
-  <script type="text/javascript" src="./libs/require.js"></script>
-  <script type="text/javascript" src="./main_dashboard.js"></script>
-  <script type="text/javascript" src="./libs/d3.v2.js"></script>
+<body>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="montageVersion"></div>
+    </div>
 </body>
 </html>
