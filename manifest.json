@@ -1,0 +1,20 @@
+{
+  "name": "TCPP alpha",
+  "version": "0.1.1",
+  "description": "",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "offline_enabled": true,
+  "permissions": [
+    "unlimitedStorage"
+  ],
+  "content_security_policy": "default-src 'self' https://*.phophlo.ca https://phophlo.iriscouch.com https://secure.gravatar.com https://localhost:* https://ssl.google-analytics.com ",
+  "icons": {
+    "16": "assets/img/icon16.png",
+    "48": "assets/img/icon48.png",
+    "128": "assets/img/icon128.png"
+  }
+}
