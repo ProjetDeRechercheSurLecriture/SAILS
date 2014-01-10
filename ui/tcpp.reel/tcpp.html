@@ -11,12 +11,6 @@
                 "element": {"#": "experiment"}
             }
         },
-        "audiences": {
-            "prototype": "montage/core/range-controller",
-            "properties": {
-                "selection": []
-            }
-        },
         "chooseLanguage": {
             "prototype": "montage/ui/text.reel",
             "properties": {
@@ -79,15 +73,6 @@
             "prototype": "montage/core/promise-controller",
             "bindings": {
                 "value": {"<-": "@owner.description"}
-            }
-        },
-        "locales": {
-            "prototype": "digit/ui/select.reel",
-            "properties": {
-                "element": {"#": "locales"}
-            },
-            "bindings": {
-                "contentController": {"<-": "@owner.localesController"}
             }
         },
         "nextActionEventListener": {
@@ -203,16 +188,6 @@
                 "label": "Tutorial"
             }
         },
-        "targetAudience": {
-            "prototype": "digit/ui/select.reel",
-            "properties": {
-                "element": {"#": "targetAudience"},
-                "labelPropertyName": "gameLabel"
-            },
-            "bindings": {
-                "contentController": {"<-": "@owner.audiencesController"}
-            }
-        },
         "title": {
             "prototype": "digit/ui/title.reel",
             "properties": {
@@ -262,9 +237,9 @@
             <span data-montage-id="chooseLanguage">
                 Change Stimuli Language
             </span>
-            <select data-montage-id="locales"></select>
+            <select></select>
             View game as:
-            <select data-montage-id="targetAudience"></select>
+            <select ></select>
             <div data-montage-id="responses" class="Experiment-responses-display">
                 <span data-montage-id="response" class="Experiment-response-debug"></span>
             </div>
