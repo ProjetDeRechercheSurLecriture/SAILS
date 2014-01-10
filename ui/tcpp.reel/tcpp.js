@@ -1,17 +1,24 @@
 /**
  * @module ui/tcpp.reel
- * @requires montage/ui/component
+ * @requires oprime-montage/ui/experiment
  */
-var Component = require("montage/ui/component").Component;
+var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
 
 /**
- * @class Tcpp
- * @extends Component
+ * @class TCPP
+ * @extends Experiment
  */
-exports.Tcpp = Component.specialize(/** @lends Tcpp# */ {
+var TCPP = exports.TCPP = Experiment.specialize(/** @lends TCPP# */ {
     constructor: {
-        value: function Tcpp() {
+        value: function TCPP() {
+            this.experimentalDesignSrc = "assets/stimuli/tcpp_design.json";
             this.super();
+            this.loadDesign();
         }
     }
+    // templateModuleId: {
+    //     value: "oprime-montage/ui/experiment.reel/experiment.html"
+    // }
 });
+
+exports.Tcpp = TCPP;
