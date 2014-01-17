@@ -2,6 +2,7 @@
 
 module.exports = function(grunt) {
 
+  var montageMobileWebViewsRoot = "../montage-mobile-webviews";
   // Project configuration.
   grunt.initConfig({
     tests: {
@@ -10,12 +11,7 @@ module.exports = function(grunt) {
     exec: {
       echo_help: {
         cmd: function() {
-          return 'echo "You can use this project to download Montage demos, and build them into Phonegap (Cordova) wrapped packaged apps to explore MontageJS as a HTML5 UI for native apps (delivered via the Android Google Play store, and/or the Apple Store)\n\n  See Gruntfile.js for what you can do with this project"';
-        }
-      },
-      download_demos: {
-        cmd: function() {
-          return 'npm install && cd node_modules/montage && npm install';
+          return 'echo " "';
         }
       },
       update_assets_from_www: {
@@ -23,35 +19,35 @@ module.exports = function(grunt) {
           return './scripts/copy_assets_from_www_to_platforms.sh';
         }
       },
-      build_demos_for_production: {
+      build_codebase_for_production: {
         cmd: function() {
           // return 'cd node_modules/popcorn && mop && cd ../../node_modules/paparazzi && mop && cd ../../node_modules/calculator && mop && cd ../../node_modules/photofx && mop && cd ../../node_modules/card && mop && cd ../../node_modules/storyboard && mop ';
-          return ' mop --version || sudo npm install -g mop && cd node_modules/popcorn && npm install  || echo "" ; mop && cd node_modules/montage && npm install  || echo "" ; mop ';
+          return ' mop --version || sudo npm install -g mop && ; mop ';
         }
       },
-      android: {
+      android_debug: {
         cmd: function() {
-          return 'cd platforms/android/cordova && npm install && cd ../ && cordova run android';
+          return 'cd ' + montageMobileWebViewsRoot + '&& cordova run android';
         }
       },
       android_build: {
         cmd: function() {
-          return 'cd platforms/android && ant clean debug install';
+          return 'cd ' + montageMobileWebViewsRoot + '/platforms/android && ant clean debug install';
         }
       },
       android_test: {
         cmd: function() {
-          return 'android update project -p ./platforms/android && cd platforms/android && ant clean debug install';
+          return 'cd ' + montageMobileWebViewsRoot + ' && android update project -p ./platforms/android && cd platforms/android && ant clean debug install';
         }
       },
-      android_test_webview: {
+      android_debug_webview: {
         cmd: function() {
           return 'ls android-server-2.32.0.apk || { curl -O --retry 999 --retry-max-time 0 -C -  https://selenium.googlecode.com/files/android-server-2.32.0.apk; } && adb install android-server-2.32.0.apk || { echo "Already installed"; } && adb  shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity -e debug true && adb  forward tcp:8080 tcp:8080 || { echo "Webdriver already started and bound to socket"; } ';
         }
       },
       ios: {
         cmd: function() {
-          return 'cordova build ios && ./platforms/ios/cordova/run ';
+          return 'cd ' + montageMobileWebViewsRoot + ' && cordova build ios && ./platforms/ios/cordova/run ';
         }
       },
       ios_test: {
@@ -67,12 +63,12 @@ module.exports = function(grunt) {
       }, 
       cordova_js_test: {
         cmd: function() {
-          return ' mkdir deps || echo "" ; cd deps  ;  git clone https://github.com/apache/cordova-mobile-spec.git || echo "" ;  cordova platform add ios android ; cordova plugin add ../cordova-mobile-spec/dependencies-plugin ; rm -r www ; ln -s ../cordova-mobile-spec www ; cordova platform add android ; cordova run android ; ';
+          return 'cd ' + montageMobileWebViewsRoot + ' &&  mkdir deps || echo "" ; cd deps ;  git clone https://github.com/apache/cordova-mobile-spec.git || echo "" ;  cordova platform add ios android ; cordova plugin add ../cordova-mobile-spec/dependencies-plugin ; rm -r www ; ln -s ../cordova-mobile-spec www ; cordova platform add android ; cordova run android ; ';
         }
       }, 
-      cordova_android_test: {
+      cordova_android_debug: {
         cmd: function() {
-          return 'mkdir deps || echo "" ; cd deps ; git clone https://github.com/apache/cordova-android.git || echo "" ; cd cordova-android/framework ; android update project -p . -t android-18 --subprojects ; ant debug install  ; ant jar ; cd ../test && mkdir libs ||  echo ""  ; cp ../framework/cordova* libs/ ; android update project -p . -t android-18 --subprojects ; ant debug install ; adb shell am instrument -w org.apache.cordova.test/android.test.InstrumentationTestRunner ';
+          return 'cd ' + montageMobileWebViewsRoot + ' && mkdir deps || echo "" ; cd deps ; git clone https://github.com/apache/cordova-android.git || echo "" ; cd cordova-android/framework ; android update project -p . -t android-18 --subprojects ; ant debug install  ; ant jar ; cd ../test && mkdir libs ||  echo ""  ; cp ../framework/cordova* libs/ ; android update project -p . -t android-18 --subprojects ; ant debug install ; adb shell am instrument -w org.apache.cordova.test/android.test.InstrumentationTestRunner ';
         }
       }
     },
@@ -83,6 +79,9 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
+      codebase: {
+        src: 'ui/**/*.js'
+      }
     },
     watch: {
       gruntfile: {
@@ -91,42 +90,12 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      demos: {
+      codebase: {
         files: [
           {
             expand: true,
-            src: ['node_modules/montage/**'],
-            dest: 'www/'
-          }, // includes files in src and its subdirs
-          {
-            expand: true,
-            src: ['node_modules/popcorn/builds/popcorn/**'],
-            dest: 'www/'
-          }, // includes files in src and its subdirs
-          {
-            expand: true,
-            src: ['node_modules/paparazzi/**'],
-            dest: 'www/'
-          }, // includes files in src and its subdirs
-          {
-            expand: true,
-            src: ['node_modules/calculator/**'],
-            dest: 'www/'
-          }, // includes files in src and its subdirs
-          {
-            expand: true,
-            src: ['node_modules/photofx/**'],
-            dest: 'www/'
-          }, // includes files in src and its subdirs
-          {
-            expand: true,
-            src: ['node_modules/card/**'],
-            dest: 'www/'
-          }, // includes files in src and its subdirs
-          {
-            expand: true,
-            src: ['node_modules/storyboard/**'],
-            dest: 'www/'
+            src: ['builds/pre-sails/**'],
+            dest: montageMobileWebViewsRoot + '/www/'
           }
         ]
       }
@@ -142,22 +111,19 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['jshint', 'exec:echo_help']);
 
-  // Just download fresh demos, but dont overwrite contents of www/
-  grunt.registerTask('download', ['jshint', 'exec:download_demos']);
-
-  // Warning calling update will download all the latest demos and build them into the app, replacing any previous demos
-  grunt.registerTask('update', ['jshint', 'exec:download_demos', 'exec:build_demos_for_production', 'exec:update_assets_from_www', 'copy:demos']);
+  // Warning calling update will download all the latest codebase and build them into the app, replacing any previous codebase
+  grunt.registerTask('update', ['jshint', 'exec:build_codebase_for_production', 'exec:update_assets_from_www', 'copy:codebase']);
 
   // Build and debug/test on devices
   grunt.registerTask('android', ['jshint', 'exec:android']);
   grunt.registerTask('ios', ['jshint', 'exec:ios']);
 
   // Run tests on emulators/devices using travis/jenkins
-  grunt.registerTask('test-android', ['jshint', 'exec:android_test']);
-  grunt.registerTask('test-ios', ['jshint', 'exec:ios_test']);
-  grunt.registerTask('test', ['exec:android_test', 'exec:ios_test']);
+  grunt.registerTask('debug-android', ['jshint', 'exec:android_debug']);
+  grunt.registerTask('debug-ios', ['jshint', 'exec:ios_debug']);
+  grunt.registerTask('debug', ['exec:android_debug', 'exec:ios_debug']);
 
   // Run everything to set up a new machine or continuous integration tests for travis/jenkins
-  grunt.registerTask('everything', [ 'exec:update_assets_from_www', 'exec:android_build', 'exec:android_test_webview', 'exec:selenium_test']);
+  grunt.registerTask('everything', [ 'exec:update_assets_from_www', 'exec:android_build', 'exec:android_debug_webview', 'exec:selenium_test']);
   // grunt.registerTask('ci-test', ['update', 'exec:android_build', 'test']);
 };
