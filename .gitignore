@@ -33,6 +33,11 @@ image_stimuli
 proguard.cfg
 
 node_modules
+bower_components
+
+
+##### Mop Files ####
+builds
 
 # Android files #
 bin/
