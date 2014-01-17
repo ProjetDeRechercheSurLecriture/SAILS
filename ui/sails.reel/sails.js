@@ -1,17 +1,17 @@
 /**
- * @module ui/tcpp.reel
+ * @module ui/sails.reel
  * @requires oprime-montage/ui/experiment
  */
 var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
 
 /**
- * @class TCPP
+ * @class SAILS
  * @extends Experiment
  */
-var TCPP = exports.TCPP = Experiment.specialize(/** @lends TCPP# */ {
+var SAILS = exports.SAILS = Experiment.specialize(/** @lends SAILS# */ {
     constructor: {
-        value: function TCPP() {
-            this.experimentalDesignSrc = "assets/stimuli/tcpp_design.json";
+        value: function SAILS() {
+            this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
             this.loadDesign();
         }
@@ -21,4 +21,4 @@ var TCPP = exports.TCPP = Experiment.specialize(/** @lends TCPP# */ {
     // }
 });
 
-exports.Tcpp = TCPP;
+exports.Sails = SAILS;
