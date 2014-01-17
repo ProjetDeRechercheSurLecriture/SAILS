@@ -5,6 +5,7 @@
 # Stimuli #
 ##########
 *.png
+*.ico
 *.wav
 *.mp3
 *.jpg
