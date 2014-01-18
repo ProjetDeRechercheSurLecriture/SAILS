@@ -15,7 +15,7 @@ var SAILS = exports.SAILS = Experiment.specialize(/** @lends SAILS# */ {
             console.log(designToForceIncludeInMop);
             this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
-            // this.loadDesign();
+            this.loadDesign(designToForceIncludeInMop);
         }
     }
     // templateModuleId: {
