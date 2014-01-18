@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       build_codebase_for_production: {
         cmd: function() {
           // return 'cd node_modules/popcorn && mop && cd ../../node_modules/paparazzi && mop && cd ../../node_modules/calculator && mop && cd ../../node_modules/photofx && mop && cd ../../node_modules/card && mop && cd ../../node_modules/storyboard && mop ';
-          return ' mop --version || sudo npm install -g mop && ; mop ';
+          return ' mop --version || {sudo npm install -g mop } && mop ';
         }
       },
       android_debug: {
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
           return 'ls android-server-2.32.0.apk || { curl -O --retry 999 --retry-max-time 0 -C -  https://selenium.googlecode.com/files/android-server-2.32.0.apk; } && adb install android-server-2.32.0.apk || { echo "Already installed"; } && adb  shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity -e debug true && adb  forward tcp:8080 tcp:8080 || { echo "Webdriver already started and bound to socket"; } ';
         }
       },
-      ios: {
+      ios_debug: {
         cmd: function() {
           return 'cd ' + montageMobileWebViewsRoot + ' && cordova build ios && ./platforms/ios/cordova/run ';
         }
@@ -119,8 +119,8 @@ module.exports = function(grunt) {
   grunt.registerTask('ios', ['jshint', 'exec:ios']);
 
   // Run tests on emulators/devices using travis/jenkins
-  grunt.registerTask('debug-android', ['jshint', 'exec:android_debug']);
-  grunt.registerTask('debug-ios', ['jshint', 'exec:ios_debug']);
+  grunt.registerTask('debug-android', ['jshint', 'exec:build_codebase_for_production','copy:codebase', 'exec:android_debug']);
+  grunt.registerTask('debug-ios', ['jshint', 'copy:codebase', 'exec:ios_debug']);
   grunt.registerTask('debug', ['exec:android_debug', 'exec:ios_debug']);
 
   // Run everything to set up a new machine or continuous integration tests for travis/jenkins

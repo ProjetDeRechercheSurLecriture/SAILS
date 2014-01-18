@@ -4,8 +4,7 @@
     "dependencies": {
         "montage": "git://github.com/cesine/montage.git#chromeApp",
         "digit": "~0.4.0",
-        "oprime-montage": "latest",
-        "font-awesome": "git://github.com/FortAwesome/Font-Awesome.git"
+        "oprime-montage": "latest"
     },
     "devDependencies": {
         "grunt": "*",

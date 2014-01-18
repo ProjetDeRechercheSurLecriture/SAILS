@@ -2,7 +2,8 @@
  * @module ui/sails.reel
  * @requires oprime-montage/ui/experiment
  */
-var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
+var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
+    designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
 
 /**
  * @class SAILS
@@ -11,9 +12,10 @@ var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
 var SAILS = exports.SAILS = Experiment.specialize(/** @lends SAILS# */ {
     constructor: {
         value: function SAILS() {
+            console.log(designToForceIncludeInMop);
             this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
-            this.loadDesign();
+            // this.loadDesign();
         }
     }
     // templateModuleId: {
