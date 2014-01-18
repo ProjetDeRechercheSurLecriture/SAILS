@@ -2,8 +2,7 @@
  * @module ui/sails-stimulus.reel
  * @requires core/contextualizable-component
  */
-var ContextualizableComponent = require("oprime-montage/core/contextualizable-component").ContextualizableComponent,
-  AbstractStimulus = require("oprime-montage/core/abstract-stimulus").AbstractStimulus;
+var AbstractStimulus = require("oprime-montage/core/abstract-stimulus").AbstractStimulus;
 
 /**
  * @class SailsStimulus

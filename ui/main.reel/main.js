@@ -15,6 +15,7 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 			// localStorage.setItem("montage_locale", "fr");
 			this.super();
 			var globalContextualizer = new Contextualizer();
+			console.log(globalContextualizer);
 		}
 	}
 });
