@@ -14,13 +14,13 @@
  		win.launchData = launchData;
  	});
 
- 	chrome.app.window.create('sandbox.html', {
+ 	// chrome.app.window.create('sandbox.html', {
  		
- 		frame: "none",
- 		width: 1024,
- 		height: 768,
- 	}, function(win) {
- 		win.launchData = launchData;
- 	});
+ 	// 	frame: "none",
+ 	// 	width: 1024,
+ 	// 	height: 768,
+ 	// }, function(win) {
+ 	// 	win.launchData = launchData;
+ 	// });
 
  });
