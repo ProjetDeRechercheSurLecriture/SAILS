@@ -9,6 +9,7 @@
 }
 
 .SailsStimulus .Stimulus-content-left img {
-    width: 65%;
+    width: 50%;
+    margin-left: 10%;
     /*border: 1px solid black;*/
 }

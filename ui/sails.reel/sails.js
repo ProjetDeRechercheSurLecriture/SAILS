@@ -9,15 +9,27 @@ var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
  * @class SAILS
  * @extends Experiment
  */
-var SAILS = exports.SAILS = Experiment.specialize(/** @lends SAILS# */ {
+var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     constructor: {
         value: function SAILS() {
             console.log(designToForceIncludeInMop);
             this.experimentalDesignSrc = "assets/stimuli/sails_design_simplified.json";
             this.super();
             this.loadDesign(designToForceIncludeInMop);
+
+
         }
     }
+    // enterDocument: {
+    //     value: function() {
+    //         this.super();
+    //         this.templateObjects.currentStimulus.templateObjects.reinforcement.images = ;
+
+    //         this.templateObjects.currentStimulus.templateObjects.reinforcement.firstImageSrc = "../../../../assets/stimuli/image/r00_caterpillars.png";
+    //         this.templateObjects.currentStimulus.templateObjects.reinforcement.lastImageSrc = "";
+    //         this.templateObjects.currentStimulus.templateObjects.reinforcement.showFirst();
+    //     }
+    // }
     // templateModuleId: {
     //     value: "oprime-montage/ui/experiment.reel/experiment.html"
     // }
