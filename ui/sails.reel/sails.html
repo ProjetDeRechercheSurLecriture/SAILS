@@ -149,16 +149,32 @@
                 "listener": {"@": "nextActionEventListener"}
             }]
         },
-        "playGame": {
-            "prototype": "digit/ui/image.reel",
+
+        "startExperimentActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
             "properties": {
-                "element": {"#": "playGame"},
+                "action": "run",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "startExperiment": {
+            "prototype": "oprime-montage/ui/image-button.reel",
+            "properties": {
+                "element": {"#": "startExperiment"},
                 "enabled": true,
                 "src": ""
             },
             "bindings": {
                 "src": {"<-": "@owner.iconSrc ?? '' "}
-            }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "startExperimentActionEventListener"}
+            }]
         },
         "previousActionEventListener": {
             "prototype": "montage/core/event/action-event-listener",
@@ -334,7 +350,7 @@
             </div>
         </header>
         <div data-montage-id="showStartButtonCondition">
-            <button data-montage-id="playGame" class="Experiment-start-pause-button"></button>
+            <button data-montage-id="startExperiment" class="Experiment-start-pause-button"></button>
         </div>
         <div data-montage-id="showGameCondition" class="Experiment-content-container Main-content-container">
             <div data-montage-id="stimulus"></div>
