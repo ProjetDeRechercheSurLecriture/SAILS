@@ -177,19 +177,29 @@
         "showGameCondition": {
             "prototype": "montage/ui/condition.reel",
             "properties": {
-                "element": {"#": "showGameCondition"}
+                "element": {"#": "showGameCondition"},
+                "removalStrategy": "hide"
+            },
+            "bindings": {
+                "condition": {"<-": "@owner.currentlyPlaying"}
+            }
+        },
+        "showStartButtonCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "showStartButtonCondition"}
             },
             "bindings": {
                 "condition": {"<-": "!@owner.currentlyPlaying"}
             }
         },
-        "showGameDetailsCondition": {
+        "showTutorialCondition": {
             "prototype": "montage/ui/condition.reel",
             "properties": {
-                "element": {"#": "showGameDetailsCondition"}
+                "element": {"#": "showTutorialCondition"}
             },
             "bindings": {
-                "condition": {"<-": "!@owner.tutorialMode"}
+                "condition": {"<-": "@owner.tutorialMode"}
             }
         },
         "showTutorialActionEventListener": {
@@ -221,7 +231,7 @@
                 "element": {"#": "showResultReportCondition"}
             },
             "bindings": {
-                "condition": {"<-": "!@owner.resultsReportMode"}
+                "condition": {"<-": "@owner.resultsReportMode"}
             }
         },
         "showResultReportActionEventListener": {
@@ -275,14 +285,16 @@
                 <button data-montage-id="nextButton"></button>
             </div>
         </header>
-        <button data-montage-id="playGame" class="Experiment-start-pause-button"></button>
-        <div data-montage-id="showGameCondition">
-            <div class="Experiment-content-container Main-content-container">
-                <div data-montage-id="stimulus"></div>
-                <div hidden data-montage-id="reinforcement"></div> 
-            </div>
+        <div data-montage-id="showStartButtonCondition">
+            <button data-montage-id="playGame" class="Experiment-start-pause-button"></button>
         </div>
-        <div data-montage-id="showGameDetailsCondition" class="Experiment-details">
+        <div data-montage-id="showGameCondition" class="Experiment-content-container Main-content-container">
+            experiment
+            <div data-montage-id="stimulus"></div>
+            <div hidden data-montage-id="reinforcement"></div> 
+        </div>
+        <div data-montage-id="showTutorialCondition" class="Experiment-details">
+            Tutorial
             <h1 data-montage-id="title"></h1>
             <span data-montage-id="description"></span>
         </div>
