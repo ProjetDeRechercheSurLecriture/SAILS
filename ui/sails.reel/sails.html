@@ -41,7 +41,7 @@
                 "element": {"#": "currentStimulusIndexBadge"}
             },
             "bindings": {
-                "value": {"<-": "@owner._currentStimulusIndex"}
+                "value": {"<-": "@owner._currentStimulusIndex + 1"}
             }
         },
         "currentStimulus": {
@@ -95,13 +95,11 @@
                 "enabled": true,
                 "label": ">"
             },
-            "listeners": [
-            {
+            "listeners": [{
                 "type": "action",
                 "useCapture": false,
                 "listener": {"@": "nextActionEventListener"}
-            }
-            ]
+            }]
         },
         "playGame": {
             "prototype": "digit/ui/image.reel",
@@ -196,13 +194,61 @@
                 "hidden": {"<-": "!@owner.tutorialMode"}
             }
         },
+        "showTutorialActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "toggleTutorialArea",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
         "showTutorial": {
             "prototype": "digit/ui/button.reel",
             "properties": {
                 "element": {"#": "showTutorial"},
                 "enabled": true,
                 "label": "Tutorial"
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "showTutorialActionEventListener"}
+            }]
+        },
+        "showResultReportCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "showResultReportCondition"},
+                "removalStrategy": "hide"
+            },
+            "bindings": {
+                "hidden": {"<-": "!@owner.resultsReportMode"}
             }
+        },
+        "showResultReportActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "showResultReport",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "showResultReport": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "showResultReport"},
+                "enabled": true,
+                "label": "Results Report"
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "showResultReportActionEventListener"}
+            }]
         },
         "title": {
             "prototype": "digit/ui/title.reel",
@@ -243,7 +289,8 @@
             <h1 data-montage-id="title"></h1>
             <span data-montage-id="description"></span>
         </div>
-        <div>
+        <div data-montage-id="showResultReportCondition" class="Experiment-details">
+            Your score!
             <div data-montage-id="resultReport"></div>
         </div>
         <div data-montage-id="confirmDialogOverlay"> </div>
@@ -253,6 +300,7 @@
             <span data-montage-id="currentTestBlockLabel"></span>
             <output data-montage-id="currentStimulusIndexBadge"></output>
             <button data-montage-id="showTutorial"></button>
+            <button data-montage-id="showResultReport"></button>
             <span data-montage-id="chooseLanguage">
                 Change Stimuli Language
             </span>
