@@ -17,5 +17,29 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 			var globalContextualizer = new Contextualizer();
 			console.log(globalContextualizer);
 		}
+	},
+
+	// enterDocument: {
+	// 	value: function(firstTime) {
+	// 		this.super(firstTime);
+
+	// 		if (firstTime) {
+	// 			this.templateObjects.localesController.content = this.locales;
+	// 		}
+	// 	}
+	// },
+
+	locales: {
+		value: [{
+			"iso": "en",
+			"label": "English",
+		}, {
+			"iso": "fr",
+			"label": "Français",
+		}, {
+			"iso": "iu",
+			"label": "ᐃᓄᒃᑎᑐᑦ",
+		}]
 	}
+
 });

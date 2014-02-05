@@ -29,25 +29,44 @@
             }
         },
 
-        "chooseLanguage": {
+        "localesController": {
+            "prototype": "montage/core/range-controller",
+            "bindings": {
+                "content": {"<-": "@owner.locales"}
+            }
+        },
+
+        "locales": {
+            "prototype": "digit/ui/select.reel",
+            "properties": {
+                "element": {"#": "locales"},
+                "contentController": {"@": "localesController"},
+                "labelPropertyName": "label"
+            }
+        },
+
+        "locale": {
             "prototype": "montage/ui/text.reel",
             "properties": {
-                "element": {"#": "chooseLanguage"}
+                "element": {"#": "locale"}
             },
-            "localizations": {
-                "value": {
-                    "key": "change_language"
-                }
+            "bindings": {
+                "value": {"<-": "@locales.value.iso"}
             }
         }
+
     }
     </script>
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
         <div data-montage-id="experiment"></div>
-        <div data-montage-id="montageVersion" hidden></div>
-        <div data-montage-id="chooseLanguage" hidden>Change Game Interface Language</div>
+        <div data-montage-id="montageVersion" ></div>
+        <span data-montage-id="chooseLanguage">
+            Change App Language
+        </span>
+        <select data-montage-id="locales"></select>
+        <span data-montage-id="locale"></span>
     </div>
 </body>
 </html>

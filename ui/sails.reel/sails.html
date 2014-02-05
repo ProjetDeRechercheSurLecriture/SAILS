@@ -11,6 +11,30 @@
                 "element": {"#": "experiment"}
             }
         },
+
+        "audiencesController": {
+            "prototype": "montage/core/range-controller"
+        },
+
+        "audiences": {
+            "prototype": "digit/ui/select.reel",
+            "properties": {
+                "element": {"#": "audiences"},
+                "contentController": {"@": "audiencesController"},
+                "labelPropertyName": "text"
+            }
+        },
+
+        "audience": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "audience"}
+            },
+            "bindings": {
+                "value": {"<-": "@audiences.value.gameLabel"}
+            }
+        },
+
         "chooseLanguage": {
             "prototype": "montage/ui/text.reel",
             "properties": {
@@ -62,6 +86,30 @@
                 "value": {"<-": "@owner._currentTestBlock.label"}
             }
         },
+
+        "experimentStimuliDialectsController": {
+            "prototype": "montage/core/range-controller"
+        },
+
+        "experimentStimuliDialects": {
+            "prototype": "digit/ui/select.reel",
+            "properties": {
+                "element": {"#": "experimentStimuliDialects"},
+                "contentController": {"@": "experimentStimuliDialectsController"},
+                "labelPropertyName": "label"
+            }
+        },
+
+        "experimentStimuliDialect": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "experimentStimuliDialect"}
+            },
+            "bindings": {
+                "value": {"<-": "@experimentStimuliDialects.value.iso"}
+            }
+        },
+
         "description": {
             "prototype": "digit/ui/text.reel",
             "properties": {
@@ -289,7 +337,6 @@
             <button data-montage-id="playGame" class="Experiment-start-pause-button"></button>
         </div>
         <div data-montage-id="showGameCondition" class="Experiment-content-container Main-content-container">
-            experiment
             <div data-montage-id="stimulus"></div>
             <div hidden data-montage-id="reinforcement"></div> 
         </div>
@@ -313,9 +360,11 @@
             <span data-montage-id="chooseLanguage">
                 Change Stimuli Language
             </span>
-            <select></select>
+            <select data-montage-id="experimentStimuliDialects"></select>
+            <span data-montage-id="experimentStimuliDialect"></span>
+            <span data-montage-id="audience"></span>
             View game as:
-            <select ></select>
+            <select data-montage-id="audiences"></select>
             <div data-montage-id="responses" class="Experiment-responses-display">
                 <span data-montage-id="response" class="Experiment-response-debug"></span>
             </div>
