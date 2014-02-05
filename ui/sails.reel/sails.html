@@ -177,21 +177,19 @@
         "showGameCondition": {
             "prototype": "montage/ui/condition.reel",
             "properties": {
-                "element": {"#": "showGameCondition"},
-                "removalStrategy": "hide"
+                "element": {"#": "showGameCondition"}
             },
             "bindings": {
-                "hidden": {"<-": "!@owner.currentlyPlaying"}
+                "condition": {"<-": "!@owner.currentlyPlaying"}
             }
         },
         "showGameDetailsCondition": {
             "prototype": "montage/ui/condition.reel",
             "properties": {
-                "element": {"#": "showGameDetailsCondition"},
-                "removalStrategy": "hide"
+                "element": {"#": "showGameDetailsCondition"}
             },
             "bindings": {
-                "hidden": {"<-": "!@owner.tutorialMode"}
+                "condition": {"<-": "!@owner.tutorialMode"}
             }
         },
         "showTutorialActionEventListener": {
@@ -220,11 +218,10 @@
         "showResultReportCondition": {
             "prototype": "montage/ui/condition.reel",
             "properties": {
-                "element": {"#": "showResultReportCondition"},
-                "removalStrategy": "hide"
+                "element": {"#": "showResultReportCondition"}
             },
             "bindings": {
-                "hidden": {"<-": "!@owner.resultsReportMode"}
+                "condition": {"<-": "!@owner.resultsReportMode"}
             }
         },
         "showResultReportActionEventListener": {
