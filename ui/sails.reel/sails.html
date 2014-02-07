@@ -280,8 +280,7 @@
             "prototype": "digit/ui/button.reel",
             "properties": {
                 "element": {"#": "showTutorial"},
-                "enabled": true,
-                "label": "Tutorial"
+                "enabled": true
             },
             "listeners": [{
                 "type": "action",
@@ -312,8 +311,7 @@
             "prototype": "digit/ui/button.reel",
             "properties": {
                 "element": {"#": "showResultReport"},
-                "enabled": true,
-                "label": "Results Report"
+                "enabled": true
             },
             "listeners": [{
                 "type": "action",
@@ -367,20 +365,23 @@
         </div>
         <div data-montage-id="confirmDialogOverlay"> </div>
         <footer>
-            <a href = "../../node_modules/oprime-montage/test/lib/cordova/spec.html">Tests</a>
+            <a href = "../../node_modules/oprime-montage/test/lib/cordova/spec.html" hidden>Tests</a>
 
             <span data-montage-id="currentTestBlockLabel"></span>
             <output data-montage-id="currentStimulusIndexBadge"></output>
-            <button data-montage-id="showTutorial"></button>
-            <button data-montage-id="showResultReport"></button>
+            <button data-montage-id="showTutorial">
+                <i class="fa fa-question-circle"></i>
+            </button>
+            <button data-montage-id="showResultReport">
+                <i class="fa fa-star-half-o"></i>
+            </button>
             <span data-montage-id="chooseLanguage">
-                Change Stimuli Language
+                Stimuli:
             </span>
             <select data-montage-id="experimentStimuliDialects"></select>
             <span data-montage-id="experimentStimuliDialect"></span>
-            <span data-montage-id="audience"></span>
-            View game as:
             <select data-montage-id="audiences"></select>
+            <span data-montage-id="audience"></span>
             <div data-montage-id="responses" class="Experiment-responses-display">
                 <span data-montage-id="response" class="Experiment-response-debug"></span>
             </div>

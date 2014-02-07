@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <script type="text/montage-serialization">
     {
 
@@ -54,19 +55,18 @@
                 "value": {"<-": "@locales.value.iso"}
             }
         }
-
     }
     </script>
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
         <div data-montage-id="experiment"></div>
-        <div data-montage-id="montageVersion" ></div>
-        <span data-montage-id="chooseLanguage">
-            Change App Language
+        <div data-montage-id="montageVersion" class="version"></div>
+        <span data-montage-id="chooseLanguage" class="chooseLocale">
+            App: 
+            <select data-montage-id="locales" ></select>
+            <span data-montage-id="locale"></span>
         </span>
-        <select data-montage-id="locales"></select>
-        <span data-montage-id="locale"></span>
     </div>
 </body>
 </html>
