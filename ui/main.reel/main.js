@@ -2,8 +2,10 @@
  * @module ui/main.reel
  * @requires core/contextualizable-component
  */
-var ContextualizableComponent = require("oprime-montage/core/contextualizable-component").ContextualizableComponent,
-	Contextualizer = require("oprime-montage/core/contextualizer").Contextualizer;
+var ContextualizableComponent = require("oprime-montage/core/contextualizable-component").ContextualizableComponent;
+
+var enLocales = require("locales/en/messages.json");
+var frLocales = require("locales/fr/messages.json");
 
 /**
  * @class Main
@@ -14,8 +16,10 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 		value: function Main() {
 			// localStorage.setItem("montage_locale", "fr");
 			this.super();
-			var globalContextualizer = new Contextualizer();
-			console.log(globalContextualizer);
+
+			this.contextualizer.addMessagesToContextualizedStrings(enLocales, "en");
+			this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
+			console.log(this.contextualizer);
 		}
 	},
 
@@ -29,6 +33,14 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 	// 	}
 	// },
 
+	handleLocalesAction: {
+		value: function(e) {
+			console.log("handleLocalesAction", e);
+			this.contextualizer.currentLocale = e.target.value.iso;
+			this.needsDraw = true;
+		}
+	},
+
 	locales: {
 		value: [{
 			"iso": "en",
@@ -36,9 +48,6 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 		}, {
 			"iso": "fr",
 			"label": "Français",
-		}, {
-			"iso": "iu",
-			"label": "ᐃᓄᒃᑎᑐᑦ",
 		}]
 	}
 

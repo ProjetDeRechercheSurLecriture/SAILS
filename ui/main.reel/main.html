@@ -23,10 +23,13 @@
             }
         },
 
-        "experiment": {
-            "prototype": "ui/sails.reel",
+        "chooseLanguage": {
+            "prototype": "montage/ui/text.reel",
             "properties": {
-                "element": {"#": "experiment"}
+                "element": {"#": "chooseLanguage"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.contextualizer.localize('change_language')"}
             }
         },
 
@@ -43,7 +46,12 @@
                 "element": {"#": "locales"},
                 "contentController": {"@": "localesController"},
                 "labelPropertyName": "label"
-            }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
         },
 
         "locale": {
@@ -60,10 +68,9 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <div data-montage-id="experiment"></div>
         <div data-montage-id="montageVersion" class="version"></div>
-        <span data-montage-id="chooseLanguage" class="chooseLocale">
-            App: 
+        <span class="chooseLocale">
+            <span data-montage-id="chooseLanguage"></span>
             <select data-montage-id="locales" ></select>
             <span data-montage-id="locale"></span>
         </span>
