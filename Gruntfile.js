@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       build_codebase_for_production: {
         cmd: function() {
           // return 'cd node_modules/popcorn && mop && cd ../../node_modules/paparazzi && mop && cd ../../node_modules/calculator && mop && cd ../../node_modules/photofx && mop && cd ../../node_modules/card && mop && cd ../../node_modules/storyboard && mop ';
-          return ' mop --version || {sudo npm install -g mop } && mop ';
+          return './scripts/copy_cordova_instead.sh';
         }
       },
       android_debug: {
