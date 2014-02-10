@@ -16,6 +16,13 @@
             }
         },
 
+        "experiment": {
+            "prototype": "ui/sails.reel",
+            "properties": {
+                "element": {"#": "experiment"}
+            }
+        },
+
         "montageVersion": {
             "prototype": "ui/version.reel",
             "properties": {
@@ -68,6 +75,7 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="experiment"></div>
         <div data-montage-id="montageVersion" class="version"></div>
         <span class="chooseLocale">
             <span data-montage-id="chooseLanguage"></span>
