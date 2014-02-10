@@ -24,13 +24,13 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 	},
 
 	// enterDocument: {
-	// 	value: function(firstTime) {
-	// 		this.super(firstTime);
+	//	value: function(firstTime) {
+	//		this.super(firstTime);
 
-	// 		if (firstTime) {
-	// 			this.templateObjects.localesController.content = this.locales;
-	// 		}
-	// 	}
+	//		if (firstTime) {
+	//			this.templateObjects.localesController.content = this.locales;
+	//		}
+	//	}
 	// },
 
 	handleLocalesAction: {
