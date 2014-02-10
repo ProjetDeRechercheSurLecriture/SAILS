@@ -4,7 +4,7 @@
  *
  * @see http://developer.chrome.com/trunk/apps/app.window.html
  */
- chrome.app.runtime.onLaunched.addListener(function() {
+ chrome.app.runtime.onLaunched.addListener(function(launchData) {
 
  	chrome.app.window.create('sandbox.html', {
  		frame: "none",
