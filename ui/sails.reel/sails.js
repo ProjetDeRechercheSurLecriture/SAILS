@@ -17,7 +17,7 @@ var iuLocales = require("assets/stimuli/locale/iu/messages.json");
 var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     constructor: {
         value: function SAILS() {
-            console.log(designToForceIncludeInMop);
+            // console.log(designToForceIncludeInMop);
             this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
             this.loadDesign(designToForceIncludeInMop);

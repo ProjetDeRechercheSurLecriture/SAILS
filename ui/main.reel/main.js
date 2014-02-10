@@ -19,7 +19,7 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 
 			this.contextualizer.addMessagesToContextualizedStrings(enLocales, "en");
 			this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
-			console.log(this.contextualizer);
+			// console.log(this.contextualizer);
 		}
 	},
 
