@@ -170,7 +170,11 @@
                 "src": ""
             },
             "listeners": [{
-                "type": "action",
+                "type": "press",
+                "useCapture": false,
+                "listener": {"@": "startExperimentActionEventListener"}
+            },{
+                "type": "longAction",
                 "useCapture": false,
                 "listener": {"@": "startExperimentActionEventListener"}
             }]

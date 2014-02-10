@@ -5,9 +5,9 @@
 var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
     designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
 
-var enLocales = require("assets/stimuli/locale/en/messages.json");
-var frLocales = require("assets/stimuli/locale/fr/messages.json");
-var iuLocales = require("assets/stimuli/locale/iu/messages.json");
+// var enLocales = require("assets/stimuli/locale/en/messages.json");
+// var frLocales = require("assets/stimuli/locale/fr/messages.json");
+// var iuLocales = require("assets/stimuli/locale/iu/messages.json");
 
 
 /**
@@ -23,6 +23,12 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
             this.loadDesign(designToForceIncludeInMop);
 
 
+        }
+    },
+
+    handleStartExperimentPress: {
+        value: function() {
+            console.log("start button action ");
         }
     }
     // enterDocument: {
