@@ -16,8 +16,7 @@
             "prototype": "digit/ui/image.reel",
             "properties": {
                 "element": {"#": "chooseImage1"},
-                "crossOrigin": null,
-                "src": "../../assets/stimuli/image/gris.png"
+                "crossOrigin": null
             }
         },
 
@@ -28,7 +27,7 @@
                 "crossOrigin": null
             },
             "bindings": {
-                "src": {"<-": "@owner.currentReinforcementImageSrc"}
+                "src": {"<-": "@owner.currentReinforcementImageSrc ?? '../../assets/img/blank.png'"}
             }
         },
 
@@ -36,8 +35,7 @@
             "prototype": "digit/ui/image.reel",
             "properties": {
                 "element": {"#": "chooseImage2"},
-                "crossOrigin": null,
-                "src": "../../assets/stimuli/image/pas_gris.png"
+                "crossOrigin": null
             }
         }
     }
@@ -48,14 +46,14 @@
 
         <div class="Stimulus-content-left">
             <div class="Stimulus-choose-area Stimulus-touchable">
-                <img data-montage-id="chooseImage1" class="Stimulus-choose-image Stimulus-record-touch-response" src="">
+                <img data-montage-id="chooseImage1" class="Stimulus-choose-image Stimulus-record-touch-response" src="../../assets/img/blank.png">
                 <br/>
-                <img data-montage-id="chooseImage2" class="Stimulus-choose-image Stimulus-record-touch-response" src="">
+                <img data-montage-id="chooseImage2" class="Stimulus-choose-image Stimulus-record-touch-response" src="../../assets/img/blank.png">
             </div>
         </div>
 
         <div class="Stimulus-content-right">
-            <img data-montage-id="reinforcementImage"></img> 
+            <img data-montage-id="reinforcementImage" src="../../assets/img/blank.png"/> 
         </div>
         <audio id="audio" src=""></audio>        
     </div>

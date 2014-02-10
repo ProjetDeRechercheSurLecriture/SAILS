@@ -169,9 +169,6 @@
                 "label": "start",
                 "src": ""
             },
-            "bindings": {
-                "src": {"<-": "@owner.iconSrc ?? '' "}
-            },
             "listeners": [{
                 "type": "action",
                 "useCapture": false,
@@ -222,7 +219,7 @@
                 "element": {"#": "response"}
             },
             "bindings": {
-                "json": {"<-": "@responses.objectAtCurrentIteration"}
+                "json": {"<-": "@responses:iteration.object"}
             }
         },
         "responses": {
