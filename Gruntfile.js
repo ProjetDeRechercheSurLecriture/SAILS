@@ -2,7 +2,7 @@
 
 module.exports = function(grunt) {
 
-  var montageMobileWebViewsRoot = "../montage-mobile-webviews";
+  var montageMobileWebViewsRoot = "../CordovaChromeWrapper";
   // Project configuration.
   grunt.initConfig({
     tests: {
@@ -14,11 +14,6 @@ module.exports = function(grunt) {
           return 'echo " "';
         }
       },
-      update_assets_from_www: {
-        cmd: function() {
-          return './scripts/copy_assets_from_www_to_platforms.sh';
-        }
-      },
       build_codebase_for_production: {
         cmd: function() {
           // return 'cd node_modules/popcorn && mop && cd ../../node_modules/paparazzi && mop && cd ../../node_modules/calculator && mop && cd ../../node_modules/photofx && mop && cd ../../node_modules/card && mop && cd ../../node_modules/storyboard && mop ';
@@ -27,7 +22,7 @@ module.exports = function(grunt) {
       },
       android_debug: {
         cmd: function() {
-          return 'cd ' + montageMobileWebViewsRoot + '&& cordova run android';
+          return 'cd ' + montageMobileWebViewsRoot + ' && cca prepare && cca run android';
         }
       },
       android_build: {
@@ -47,7 +42,7 @@ module.exports = function(grunt) {
       },
       ios_debug: {
         cmd: function() {
-          return 'cd ' + montageMobileWebViewsRoot + ' && cordova build ios && ./platforms/ios/cordova/run ';
+          return 'cd ' + montageMobileWebViewsRoot + ' && cca prepare && cca emulate ios ';
         }
       },
       ios_test: {
@@ -88,17 +83,6 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       }
-    },
-    copy: {
-      codebase: {
-        files: [
-          {
-            expand: true,
-            src: ['builds/pre-sails/**'],
-            dest: montageMobileWebViewsRoot + '/www/'
-          }
-        ]
-      }
     }
   });
 
@@ -112,18 +96,18 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint', 'exec:echo_help']);
 
   // Warning calling update will download all the latest codebase and build them into the app, replacing any previous codebase
-  grunt.registerTask('update', ['jshint', 'exec:build_codebase_for_production', 'exec:update_assets_from_www', 'copy:codebase']);
+  grunt.registerTask('update', ['jshint', 'exec:build_codebase_for_production', 'copy:codebase']);
 
   // Build and debug/test on devices
   grunt.registerTask('android', ['jshint', 'exec:android']);
   grunt.registerTask('ios', ['jshint', 'exec:ios']);
 
   // Run tests on emulators/devices using travis/jenkins
-  grunt.registerTask('debug-android', ['jshint', 'exec:build_codebase_for_production','copy:codebase', 'exec:android_debug']);
-  grunt.registerTask('debug-ios', ['jshint', 'copy:codebase', 'exec:ios_debug']);
+  grunt.registerTask('debug-android', ['jshint', 'exec:build_codebase_for_production', 'exec:android_debug']);
+  grunt.registerTask('debug-ios', ['jshint', 'exec:build_codebase_for_production', 'exec:ios_debug']);
   grunt.registerTask('debug', ['exec:android_debug', 'exec:ios_debug']);
 
   // Run everything to set up a new machine or continuous integration tests for travis/jenkins
-  grunt.registerTask('everything', [ 'exec:update_assets_from_www', 'exec:android_build', 'exec:android_debug_webview', 'exec:selenium_test']);
+  grunt.registerTask('everything', [ 'exec:build_codebase_for_production', 'debug-android', 'exec:android_debug_webview', 'exec:selenium_test']);
   // grunt.registerTask('ci-test', ['update', 'exec:android_build', 'test']);
 };
