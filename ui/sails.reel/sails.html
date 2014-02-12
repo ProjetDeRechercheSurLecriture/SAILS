@@ -392,13 +392,15 @@
             <div data-montage-id="responses" class="Experiment-responses-display">
                 <span data-montage-id="response" class="Experiment-response-debug"></span>
             </div>
+
             <audio id="audio" controls>
                 <source src="../../assets/pageflip2.mp3" type="audio/mpeg" />
             </audio>
             <audio id="audioserver" controls>
                 <source src="http://phophlo.ca/pageflip2.mp3" type="audio/mpeg" />
             </audio>
-            <a href="#" class="btn large" onclick="playAudio('http://phophlo.ca/pageflip2.mp3');">Play Audio</a>
+
+            <a href="#" class="btn large" onclick="playAudio('assets/pageflip2.mp3');">Play Audio</a>
             <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
             <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
             <p id="audio_position"></p>
