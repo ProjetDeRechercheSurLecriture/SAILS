@@ -6,7 +6,7 @@
  */
  chrome.app.runtime.onLaunched.addListener(function(launchData) {
 
- 	chrome.app.window.create('sandbox.html', {
+ 	chrome.app.window.create('index.html', {
  		frame: "none",
  		width: 1280,
  		height: 800,

@@ -1,0 +1,14 @@
+
+.SailsStimulus {
+
+}
+
+.SailsStimulus .Stimulus-prime-image-area {
+	display: none;
+}
+
+.SailsStimulus .Stimulus-content-left img {
+    width: 50%;
+    margin-left: 10%;
+    /*border: 1px solid black;*/
+}
