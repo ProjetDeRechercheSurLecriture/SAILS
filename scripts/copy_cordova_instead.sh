@@ -13,8 +13,9 @@ cd  builds/pre-sails/packages
 find . -name  "*[^d].js" -delete
 find . -name  "*.md" -delete
 
-sed 's/<meta data-insertcordovahere="" \/>/<script type="text\/javascript" charset="utf-8" src="cordova.js"><\/script><script type="text\/javascript" charset="utf-8" src="cordova-bridge.js"><\/script>/' ../index.html  > output
-mv output ../index.html
+# ipad loads with this commented out
+# sed 's/<meta data-insertcordovahere="" \/>/<script type="text\/javascript" charset="utf-8" src="cordova.js"><\/script><script type="text\/javascript" charset="utf-8" src="cordova-bridge.js"><\/script>/' ../index.html  > output
+# mv output ../index.html
 
 # sed 's/cordova-bridge.js/cordova-bridge.load.js/' ../index.html  > output
 # mv output ../index.html
