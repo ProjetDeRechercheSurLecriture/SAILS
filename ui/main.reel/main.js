@@ -4,8 +4,8 @@
  */
 var ContextualizableComponent = require("oprime-montage/core/contextualizable-component").ContextualizableComponent;
 
-var enLocales = require("locales/en/messages.json");
-var frLocales = require("locales/fr/messages.json");
+var enLocales = require("oprime-montage/locale/en/messages.json");
+var frLocales = require("oprime-montage/locale/fr/messages.json");
 
 /**
  * @class Main
