@@ -4,7 +4,7 @@
  */
 var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
     designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
-// sampleResultToForceIncludeInMop = require("assets/stimuli/sails_sample_result.json");
+// sampleResultToForceIncludeInMop = requi re("assets/stimuli/sails_sample_result.json");
 
 var enLocales = require("assets/stimuli/locale/en/messages.json");
 var frLocales = require("assets/stimuli/locale/fr/messages.json");
@@ -49,7 +49,50 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     transform: {
         value: function() {
 
+            for (var subexperimentIndex = 0; subexperimentIndex < x.subexperiments.length; subexperimentIndex++) {
+                var subexperiment = x.subexperiments[subexperimentIndex];
+                subexperiment.scoreSubTotal = 0;
+                for (var stimulusIndex = 0; stimulusIndex < subexperiment.trials.length; stimulusIndex++) {
+                    var stimulus = subexperiment.trials[stimulusIndex];
+                    console.log(stimulus);
 
+                    stimulus.prime = {
+                        carrierPhrase: "",
+                        imageFile: "",
+                        carrierAudio: ""
+                    };
+
+                    stimulus.target = {
+                        carrierPhrase: "",
+                        imageFile: "gris.png",
+                        carrierAudio: ""
+                    };
+                    stimulus.prime.phonemic = stimulus.auditoryStimulus;
+                    stimulus.prime.audio = stimulus.auditoryStimulus;
+                    stimulus.prime.orthographic = stimulus.auditoryStimulus;
+                    delete stimulus.auditoryStimulus;
+                    delete stimulus.transcription;
+
+                    stimulus.prime.audioFile = stimulus.audioFile;
+                    delete stimulus.audioFile;
+
+                    if (stimulus.response === "gris") {
+                        stimulus.target.phonemic = "gʁi";
+                        stimulus.target.orthographic = "gris";
+                        stimulus.prime.orthographic = "gris";
+                    } else {
+                        stimulus.target.phonemic = "*";
+                        stimulus.target.orthographic = "X";
+                    }
+                    delete stimulus.targetImage;
+                    delete stimulus.distractorImages;
+                    delete stimulus.response;
+
+                }
+            }
+
+            // x.subexperiments[0].trials[0]
+            // x.subexperiments[1].trials[6]
         }
     }
 });
