@@ -21,34 +21,6 @@ exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
 			this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
 			// console.log(this.contextualizer);
 		}
-	},
-
-	// enterDocument: {
-	//	value: function(firstTime) {
-	//		this.super(firstTime);
-
-	//		if (firstTime) {
-	//			this.templateObjects.localesController.content = this.locales;
-	//		}
-	//	}
-	// },
-
-	handleLocalesAction: {
-		value: function(e) {
-			console.log("handleLocalesAction", e);
-			this.contextualizer.currentLocale = e.target.value.iso;
-			this.needsDraw = true;
-		}
-	},
-
-	locales: {
-		value: [{
-			"iso": "en",
-			"label": "English",
-		}, {
-			"iso": "fr",
-			"label": "Français",
-		}]
 	}
 
 });
