@@ -1,7 +1,7 @@
 SAILS 
 
 # What is SAILS?
-SAILS was developed by Dr. Rvachew of the Child Phonology Lab - McGill, it was gamified in collaboration with iLanguage Lab LTD to make a modular, user-friendly game which can be used by SLPs. For more information, visit the [Child Phonology Lab](http://www.medicine.mcgill.ca/srvachew/)
+«Écoute!» est un test de dépistage visant à détecter les difficultés d'orthographe chez les enfants avant qu'ils n'apprennent à écrire. «Écoute!» a été conçu par Drs. Andrea MacLeod (École d'orthophonie et d'audiologie, Faculté de médecin de l'Université de Montréal), Françoise Brosseau-Lapré et Susan Rvachew (Child Phonology Lab, Université McGill) et évalue particulièrement la capacité des enfants à percevoir les différents sons (phonèmes) de la parole. «Écoute!» est l'un des tests d'une batterie de tests de dépistage des difficultés orthographiques appelé «Phophlo».
 
 # Who can I use SAILS with?
 * SAILS is a Android app and a Chrome app, which means it works on Windows, Mac, Linux, Chromebooks and Android.
