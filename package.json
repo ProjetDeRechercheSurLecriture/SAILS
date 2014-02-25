@@ -1,6 +1,6 @@
 {
     "name": "pre-sails",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "dependencies": {
         "montage": "git://github.com/cesine/montage.git#chromeApp",
         "digit": "~0.4.0",
