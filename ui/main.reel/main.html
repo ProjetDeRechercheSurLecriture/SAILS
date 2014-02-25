@@ -44,6 +44,11 @@
                 "element": {"#": "locales"},
                 "globalKey": "interfaceLocale",
                 "selectedIso": "fr"
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
             }
         },
 
@@ -53,7 +58,10 @@
                 "element": {"#": "locale"}
             },
             "bindings": {
-                "value": {"<-": "@owner.application.interfaceLocale.iso"}
+                "value": {"<-": "@owner.application.interfaceLocale.iso"},
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
             }
         }
     }
