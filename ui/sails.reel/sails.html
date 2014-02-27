@@ -161,7 +161,7 @@
             }
         },
         "startExperiment": {
-            "prototype": "digit/ui/button.reel",
+            "prototype": "oprime-montage/ui/image-button.reel",
             "properties": {
                 "element": {"#": "startExperiment"},
                 "enabled": true,
@@ -180,7 +180,10 @@
                 "type": "longAction",
                 "useCapture": false,
                 "listener": {"@": "startExperimentActionEventListener"}
-            }]
+            }],
+            "bindings": {
+                "src": {"<-": "@owner.iconSrc"}
+            }
         },
         "previousActionEventListener": {
             "prototype": "montage/core/event/action-event-listener",
