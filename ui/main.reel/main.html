@@ -25,6 +25,11 @@
             "prototype": "ui/version.reel",
             "properties": {
                 "element": {"#": "montageVersion"}
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
             }
         },
 
