@@ -23,16 +23,19 @@
             }
         },
 
-        "reinforcementImage": {
-            "prototype": "digit/ui/image.reel",
+        "reinforcement": {
+            "prototype": "oprime-montage/ui/reinforcement.reel/reinforcement-animation.reel",
             "properties": {
-                "element": {"#": "reinforcementImage"},
-                "crossOrigin": null
+                "element": {"#": "reinforcement"}
             },
             "bindings": {
-                "src": {"<-": "@owner.currentReinforcementImageSrc ?? '../../assets/img/blank.png'"}
+                "counter": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.counter"},
+                "showFirst": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.showFirst"},
+                "showLast": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.showLast"},
+                "firstImageSrc": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.firstImageSrc"},
+                "lastImageSrc": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.lastImageSrc"}
             }
-        },
+        }, 
 
         "visualChoiceB": {
             "prototype": "digit/ui/image.reel",
@@ -59,7 +62,7 @@
         </div>
 
         <div class="Stimulus-content-right">
-            <img data-montage-id="reinforcementImage" src="../../assets/img/blank.png"/> 
+            <div data-montage-id="reinforcement"></div> 
         </div>
         <audio id="audio" src=""></audio>        
     </div>
