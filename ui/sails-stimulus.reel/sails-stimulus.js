@@ -12,6 +12,7 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
     constructor: {
         value: function SailsStimulus() {
             this.super();
+            this.confirmResponseChoiceMessage = "confirm_choice";
         }
     },
     load: {
