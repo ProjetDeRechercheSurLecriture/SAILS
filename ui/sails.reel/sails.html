@@ -193,7 +193,13 @@
             },
             "bindings": {
                 "classList.has('montage-invisible')": {
-                    "<-": "!@owner.this.application.audioPlayer.isPlaying"
+                    "<-": "!@owner.canPauseStimuli"
+                },
+                "classList.has('fa-pause')": {
+                    "<-": "!@owner.application.audioPlayer.isPaused"
+                },
+                "classList.has('fa-play')": {
+                    "<-": "@owner.application.audioPlayer.isPaused"
                 }
             },
             "listeners": [{
@@ -275,7 +281,7 @@
                 "lastImageSrc": {"<-": "@owner._currentTestBlock.reinforcementAnimation.lastImageSrc"},
                 "currentItem": {"<-": "@owner._currentStimulusIndex"}
             }
-        }, 
+        },
 
         "response": {
             "prototype": "oprime-montage/ui/response.reel",
@@ -422,8 +428,8 @@
                 <button data-montage-id="previousButton"><i class="fa fa-step-backward"></i></button>
             </div>
             <div class="Experiment-replay-button">
-                <button data-montage-id="replayButton"><i class="fa fa-play"></i></button>
-                <button data-montage-id="pauseButton"><i class="fa fa-pause"></i></button>
+                <button data-montage-id="replayButton"><i class="fa fa-refresh"></i></button>
+                <button data-montage-id="pauseButton" class="fa"></button>
             </div>
             <div class="Experiment-next-button">
                 <button data-montage-id="nextButton"><i class="fa fa-step-forward"></i></button>

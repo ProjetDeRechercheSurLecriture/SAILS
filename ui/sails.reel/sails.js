@@ -24,6 +24,7 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
             this.loadDesign(designToForceIncludeInMop);
             
             this.canReplayStimuli = true;
+            this.canPauseStimuli = true;
 
             this.contextualizer.addMessagesToContextualizedStrings(enLocales, "en");
             this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
