@@ -244,6 +244,86 @@
                 "src": {"<-": "@owner.iconSrc"}
             }
         },
+
+        "resumeExperimentActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "nextStimulus",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "resumeExperiment": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "resumeExperiment"},
+                "enabled": true,
+                "label": "Continue",
+                "src": ""
+            },
+            "listeners": [{
+                "type": "press",
+                "useCapture": false,
+                "listener": {"@": "resumeExperimentActionEventListener"}
+            },{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "resumeExperimentActionEventListener"}
+            },{
+                "type": "longAction",
+                "useCapture": false,
+                "listener": {"@": "resumeExperimentActionEventListener"}
+            }],
+            "bindings": {
+                "src": {"<-": "@owner.iconSrc"},
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.canBeResumed"
+                }
+            }
+        },
+
+
+        "resumeAPreviousExperimentActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "resumePreviousGame",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "resumeAPreviousExperiment": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "resumeAPreviousExperiment"},
+                "enabled": true,
+                "label": "Resume A Previous Game",
+                "src": ""
+            },
+            "listeners": [{
+                "type": "press",
+                "useCapture": false,
+                "listener": {"@": "resumeAPreviousExperimentActionEventListener"}
+            },{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "resumeAPreviousExperimentActionEventListener"}
+            },{
+                "type": "longAction",
+                "useCapture": false,
+                "listener": {"@": "resumeAPreviousExperimentActionEventListener"}
+            }],
+            "bindings": {
+                "src": {"<-": "@owner.iconSrc"},
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant' || @owner.application.currentAudience.key == 'parent'"
+                }
+            }
+        },
+
         "previousActionEventListener": {
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
@@ -311,8 +391,8 @@
             },
             "bindings": {
                 "experimentalDesign": {"<->": "@owner.experimentalDesign"},
-                "iconSrc" : {"<-": "@owner.iconSrc"}
-                
+                "description": {"<-": "@owner.description"},
+                "title": {"<-": "@owner.title"}
             }
         },
         "tutorial": {
@@ -388,7 +468,10 @@
                 "removalStrategy": "hide"
             },
             "bindings": {
-                "condition": {"<-": "@owner.resultsReportMode"}
+                "condition": {"<-": "@owner.resultsReportMode"},
+                "classList.has('bluebody')": {
+                    "<-": "@owner.resultsReportMode"
+                }
             }
         },
         "showResultReportActionEventListener": {
@@ -423,22 +506,25 @@
 </head>
 <body>
     <div data-montage-id="experiment" class="Experiment SAILS">
-        <header class="Main-content-container">
-            <div class="Experiment-previous-button">
-                <button data-montage-id="previousButton"><i class="fa fa-step-backward"></i></button>
-            </div>
-            <div class="Experiment-replay-button">
-                <button data-montage-id="replayButton"><i class="fa fa-refresh"></i></button>
-                <button data-montage-id="pauseButton" class="fa"></button>
-            </div>
-            <div class="Experiment-next-button">
-                <button data-montage-id="nextButton"><i class="fa fa-step-forward"></i></button>
-            </div>
-        </header>
-        <div data-montage-id="showStartButtonCondition">
+        <div data-montage-id="showStartButtonCondition"  class="Experiment-start-pause-button-area">
             <button data-montage-id="startExperiment" class="Experiment-start-pause-button"></button>
+            <button data-montage-id="resumeExperiment" class="Experiment-start-pause-button"></button>
+            <button hidden data-montage-id="resumeAPreviousExperiment" class="Experiment-start-pause-button"></button>
+
         </div>
         <div data-montage-id="showGameCondition" class="Experiment-content-container Main-content-container">
+            <header class="Main-content-container">
+                <div class="Experiment-previous-button">
+                    <button data-montage-id="previousButton"><i class="fa fa-step-backward"></i></button>
+                </div>
+                <div class="Experiment-replay-button">
+                    <button data-montage-id="replayButton"><i class="fa fa-refresh"></i></button>
+                    <button data-montage-id="pauseButton" class="fa"></button>
+                </div>
+                <div class="Experiment-next-button">
+                    <button data-montage-id="nextButton"><i class="fa fa-step-forward"></i></button>
+                </div>
+            </header>
             <div data-montage-id="stimulus"></div>
             <div hidden data-montage-id="reinforcement"></div> 
         </div>
