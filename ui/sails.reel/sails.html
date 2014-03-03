@@ -147,6 +147,62 @@
             }]
         },
 
+        "replayActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "replayStimulus",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "replayButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "replayButton"},
+                "enabled": true
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.canReplayStimuli"
+                }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "replayActionEventListener"}
+            }]
+        },
+
+        "pauseActionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "pauseStimulus",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "pauseButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "pauseButton"},
+                "enabled": true
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.this.application.audioPlayer.isPlaying"
+                }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "pauseActionEventListener"}
+            }]
+        },
+
         "startExperimentActionEventListener": {
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
@@ -363,10 +419,14 @@
     <div data-montage-id="experiment" class="Experiment SAILS">
         <header class="Main-content-container">
             <div class="Experiment-previous-button">
-                <button data-montage-id="previousButton"></button>
+                <button data-montage-id="previousButton"><i class="fa fa-step-backward"></i></button>
+            </div>
+            <div class="Experiment-replay-button">
+                <button data-montage-id="replayButton"><i class="fa fa-play"></i></button>
+                <button data-montage-id="pauseButton"><i class="fa fa-pause"></i></button>
             </div>
             <div class="Experiment-next-button">
-                <button data-montage-id="nextButton"></button>
+                <button data-montage-id="nextButton"><i class="fa fa-step-forward"></i></button>
             </div>
         </header>
         <div data-montage-id="showStartButtonCondition">

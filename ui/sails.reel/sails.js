@@ -22,6 +22,8 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
             this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
             this.loadDesign(designToForceIncludeInMop);
+            
+            this.canReplayStimuli = true;
 
             this.contextualizer.addMessagesToContextualizedStrings(enLocales, "en");
             this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
