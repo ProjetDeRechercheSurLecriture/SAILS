@@ -25,6 +25,11 @@
             "prototype": "ui/version.reel",
             "properties": {
                 "element": {"#": "montageVersion"}
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
             }
         },
 
@@ -38,25 +43,18 @@
             }
         },
 
-        "localesController": {
-            "prototype": "montage/core/range-controller",
-            "bindings": {
-                "content": {"<-": "@owner.locales"}
-            }
-        },
-
         "locales": {
-            "prototype": "digit/ui/select.reel",
+            "prototype": "oprime-montage/ui/dialects.reel",
             "properties": {
                 "element": {"#": "locales"},
-                "contentController": {"@": "localesController"},
-                "labelPropertyName": "label"
+                "globalKey": "interfaceLocale",
+                "selectedIso": "fr"
             },
-            "listeners": [{
-                "type": "action",
-                "useCapture": false,
-                "listener": {"@": "owner"}
-            }]
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
+            }
         },
 
         "locale": {
@@ -65,7 +63,10 @@
                 "element": {"#": "locale"}
             },
             "bindings": {
-                "value": {"<-": "@locales.value.iso"}
+                "value": {"<-": "@owner.application.interfaceLocale.iso"},
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
             }
         }
     }
@@ -76,7 +77,7 @@
         <div data-montage-id="experiment"></div>
         <div data-montage-id="montageVersion" class="version"></div>
         <span class="chooseLocale">
-            <span data-montage-id="chooseLanguage"></span>
+            <span hidden data-montage-id="chooseLanguage"></span>
             <select data-montage-id="locales" ></select>
             <span data-montage-id="locale"></span>
         </span>

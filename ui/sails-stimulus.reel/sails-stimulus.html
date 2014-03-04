@@ -8,52 +8,62 @@
     {
         "owner": {
             "properties": {
-                "element": {"#": "twoImageStimulus"}
+                "element": {"#": "sailsStimulus"}
             }
         },
 
-        "chooseImage1": {
+        "visualChoiceA": {
             "prototype": "digit/ui/image.reel",
             "properties": {
-                "element": {"#": "chooseImage1"},
-                "crossOrigin": null
-            }
-        },
-
-        "reinforcementImage": {
-            "prototype": "digit/ui/image.reel",
-            "properties": {
-                "element": {"#": "reinforcementImage"},
+                "element": {"#": "visualChoiceA"},
                 "crossOrigin": null
             },
             "bindings": {
-                "src": {"<-": "@owner.currentReinforcementImageSrc ?? '../../assets/img/blank.png'"}
+                "src": {"<-": "@owner.visualChoiceA ?? '../../assets/img/blank.png'"}
             }
         },
 
-        "chooseImage2": {
+        "reinforcement": {
+            "prototype": "oprime-montage/ui/reinforcement.reel/reinforcement-animation.reel",
+            "properties": {
+                "element": {"#": "reinforcement"}
+            },
+            "bindings": {
+                "counter": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.counter"},
+                "shouldShowFirst": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.shouldShowFirst"},
+                "shouldShowLast": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.shouldShowLast"},
+                "firstImageSrc": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.firstImageSrc"},
+                "lastImageSrc": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.lastImageSrc"},
+                "currentItem": {"<-": "@owner.ownerComponent.templateObjects.reinforcement.currentItem"}
+            }
+        }, 
+
+        "visualChoiceB": {
             "prototype": "digit/ui/image.reel",
             "properties": {
-                "element": {"#": "chooseImage2"},
+                "element": {"#": "visualChoiceB"},
                 "crossOrigin": null
+            },
+            "bindings": {
+                "src": {"<-": "@owner.visualChoiceB ?? '../../assets/img/blank.png'"}
             }
         }
     }
     </script>
 </head>
 <body>
-    <div data-montage-id="twoImageStimulus" class="SailsStimulus Main-content-container">
+    <div data-montage-id="sailsStimulus" class="SailsStimulus Main-content-container">
 
         <div class="Stimulus-content-left">
             <div class="Stimulus-choose-area Stimulus-touchable">
-                <img data-montage-id="chooseImage1" class="Stimulus-choose-image Stimulus-record-touch-response" src="../../assets/stimuli/image/gris.png">
+                <img data-montage-id="visualChoiceA" class="Stimulus-choose-image Stimulus-record-touch-response" src="../../assets/img/blank.png">
                 <br/>
-                <img data-montage-id="chooseImage2" class="Stimulus-choose-image Stimulus-record-touch-response" src="../../assets/stimuli/image/pas_gris.png">
+                <img data-montage-id="visualChoiceB" class="Stimulus-choose-image Stimulus-record-touch-response" src="../../assets/img/blank.png">
             </div>
         </div>
 
         <div class="Stimulus-content-right">
-            <img data-montage-id="reinforcementImage" src="../../assets/img/blank.png"/> 
+            <div data-montage-id="reinforcement"></div> 
         </div>
         <audio id="audio" src=""></audio>        
     </div>

@@ -1,3 +1,16 @@
-.Sails {
+.SAILS {
 
+}
+
+.SAILS .ExperimentReport {
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	width: 60%;
+}
+.SAILS .ExperimentReport  p {
+	margin-bottom: 1em;
+}
+.SAILS .ExperimentReport  .well {
+	padding: 1em;
 }
