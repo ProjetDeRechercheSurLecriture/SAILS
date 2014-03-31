@@ -1,7 +1,7 @@
 SAILS 
 
 # What is SAILS?
-« Écoute! » est un test visant à dépister les difficultés d'orthographe chez les enfants avant qu'ils apprennent à écrire. « Écoute! » a été conçu par les Drs. Andrea MacLeod (École d'orthophonie et d'audiologie, Université de Montréal), Françoise Brosseau-Lapré et Susan Rvachew (École des sciences de la communication humaine, Université McGill) et évalue la capacité des enfants à percevoir les erreurs de prononciation produits par des enfants et des adultes. « Écoute! » est l'un des tests de l'outil de dépistage des difficultés orthographiques « Phophlo ».
+« Écoute! » est un test visant à dépister les difficultés d'orthographe chez les enfants avant qu'ils apprennent à écrire. « Écoute! » a été conçu par les Drs. Françoise Brosseau-Lapré et Susan Rvachew (École des sciences de la communication humaine, Université McGill) et évalue la capacité des enfants à percevoir les erreurs de prononciation produits par des enfants et des adultes. « Écoute! » est l'un des tests de l'outil de dépistage des difficultés orthographiques « Phophlo ».
 
 # Who can I use SAILS with?
 * SAILS is a Android app and a Chrome app, which means it works on Windows, Mac, Linux, Chromebooks and Android.
