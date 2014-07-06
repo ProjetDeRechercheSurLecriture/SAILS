@@ -1,0 +1,52 @@
+{
+	"change_experiment_language": {
+		"message": "Change Experiment Language",
+		"description": "An optional explaination of what this is for..."
+	},
+	"localized_title": {
+		"message": "Speech Assessment and Interactive Learning System"
+	},
+	"localized_gamified_title":{
+		"message": "Listen"
+	},
+	"localized_description_for_child": {
+		"message": "In this game, you will help the mouse eat all the cheese!"
+	},
+	"localized_description_for_teacher": {
+		"message": "Écoute focuses on the child’s ability to listen carefully to speech and recognize errors in pronunciation. The child listens to recordings of the word “gris” spoken by adults and children and indicates, by pointing to a picture representing the colour “gris”, when the word is spoken correctly. The software scores the child’s responses and indicates when the child has passed the test. This test is part of the suite of PHOPHLO screening procedures because speech perception is an important predictor of spelling ability."
+	},
+	"localized_description_for_parent": {
+		"message": "This game assesses the child's ability to hear speech sound correctly", 
+		"description": "Ce jeu évalue la capacité de l'enfant à percevoir la parole correctement."
+	},
+	"localized_description_for_slp": {
+		"message": "This test assesses the child's ability to correctly perceive speech sounds, in particular to recognize speech errors frequently made by both children and adults. The result of this test is a good indicator of possible reading problems."
+	},
+	"localized_instructions_for_teacher": {
+		"message": "In the practice trials, the child will hear recordings of people trying to say the word 'fish'. The child will determine if the pronunciation is correct or not for each recording. If the pronunciation is correct, the child will touch the word 'fish'; if it is incorrect, the child will touch 'X' on the screen. You can help the child in the practice trials by repeating the instructions or replaying the practice items. In the test trials, the child will hear recordings of people trying to say teh word 'grey', and the child is asked to determine if the pronunciation is correct or not for each recording. If the pronunciation is correct, the child will touch the word 'grey'l if it is incorrect, he/she will touch 'X'. If the child does not want to touch the screen, you can do it for him/her. Do not help the child in the test trials. Do not replay the test items unless the child is distracted and does not listen to the recording when it is played."
+	},
+	"localized_instructions_for_child": {
+		"message": "You will hear someone trying to say the word 'grey', then you will tell me if you've heard the word GREY or you've heard something else. If you hear 'grey', you touch the word 'grey' on the screen. If you don't hear 'grey', then you touch 'X' on the screen. Okay?"
+	},
+	"localized_instructions_for_school_record": {
+		"message": "In this test, the child will hear recordings of several people trying to say the word 'grey', and be asked to determine if the pronunciation is correct or not. The child touches the word 'grey' on the screen for correct pronunciation, and 'X' for incorrect pronunciation. If the chils does not want to touch the screen, you can do it for him/her."
+	},
+	"localized_instructions_for_parent": {
+		"message": "In this game, the child will hear recordings of people trying to say the word 'grey', and be asked to determine if the pronunciation is correct or not for each recording. If the pronunciation is correct, the child will touch the word 'grey' on the screen; if it is incorrect, he/she will touch 'X'. If the child does not want to touch the screen, you can do it for him/her."
+	},
+	"localized_localized_instructions_for_slp": {
+		"message": "In the practice trials, the child will hear recordings of people trying to say the word 'fish'. The child will determine if the pronunciation is correct or not for each recording. If the pronunciation is correct, the child will touch the word 'fish'; if it is incorrect, the child will touch 'X' on the screen. You can help the child in the practice trials by repeating the instructions or replaying the practice items. In the test trials, the child will hear recordings of people trying to say teh word 'grey', and the child is asked to determine if the pronunciation is correct or not for each recording. If the pronunciation is correct, the child will touch the word 'grey'l if it is incorrect, he/she will touch 'X'. If the child does not want to touch the screen, you can do it for him/her. Do not help the child in the test trials. Do not replay the test items unless the child is distracted and does not listen to the audio stimulus when it is played. There is also a reinforcement picture on the screen during the test. The child will be audio- and video-recorded during the test."
+	},
+	"localized_end_instructions_for_teacher": {
+		"message": "This is the end of the game. The child's scores are automatically saved."
+	},
+	"localized_end_instructions_for_child": {
+		"message": "Yay, it's done! Good job!"
+	},
+	"localized_end_instructions_for_slp": {
+		"message": "This is the end of the test. The child's data are automatically saved. To assess anothehr child, close and re-open the application. Would you like to save the audio and video recording of the child?"
+	},
+	"localized_ready": {
+		"message": "Ready?"
+	}
+}

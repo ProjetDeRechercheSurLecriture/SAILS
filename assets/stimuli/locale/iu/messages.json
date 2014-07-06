@@ -1,0 +1,12 @@
+{
+	"change_experiment_language": {
+		"message": "IU Change Experiment Language",
+		"description": "An optional explaination of what this is for..."
+	},
+	"localized_title": {
+		"message": "IU What do they like?"
+	},
+	"localized_description_for_child": {
+		"message": "IU Yippee this is a fun description!<br> With some html of course :)"
+	}
+}

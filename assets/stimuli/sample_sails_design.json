@@ -1,0 +1,543 @@
+{
+	"title": {
+		"default": "localized_title",
+		"gamified_title": "localized_gamified_title"
+	},
+	"database": "https://corpusdev.lingsync.org/testingphophlo-debugging",
+	"participants": [{
+		"participant_code": "AA",
+		"age": 22.34,
+		"date_of_birth": 20101231,
+		"userid": 1234512345
+	}, {
+		"participant_code": "BB",
+		"age": 23.34,
+		"date_of_birth": 20101131,
+		"userid": 12347823930
+	}],
+	"experimenter": [{
+		"experimenter_code": "NN",
+		"role": "observer",
+		"userid": 1234512345
+	}, {
+		"experimenter_code": "RT",
+		"role": "test_administrator",
+		"userid": 12347823930
+	}],
+	"description": {
+		"default": "localized_description_for_teacher",
+		"for_child": "localized_description_for_child",
+		"for_parent": "localized_description_for_parent",
+		"for_experimentAdministrator": "localized_description_for_teacher",
+		"for_school_records": "localized_description_for_school_record",
+		"for_experimentAdministratorSpecialist": "localized_description_for_slp"
+	},
+	"instructions": {
+		"default": "localized_instructions_for_teacher",
+		"for_child": "localized_instructions_for_child",
+		"for_parent": "localized_instructions_for_parent",
+		"for_experimentAdministrator": "localized_instructions_for_teacher",
+		"for_school_records": "localized_instructions_for_school_record",
+		"for_experimentAdministratorSpecialist": "localized_instructions_for_slp"
+	},
+	"end_instructions": {
+		"default": "localized_end_instructions_for_teacher",
+		"for_child": "localized_end_instructions_for_child",
+		"for_experimentAdministrator": "localized_end_instructions_for_teacher",
+		"for_experimentAdministratorSpecialist": "localized_end_instructions_for_slp"
+	},
+	"imageAssetsPath": "../../assets/stimuli/image",
+	"audioAssetsPath": "assets/stimuli/audio",
+	"iconSrc": "../../assets/img/ic_sails128.png",
+	"congratulationsImageSrc":"sails_congratulations.png",
+	"scoreTotal": 0,
+	"subexperiments": [{
+		"label": "practice",
+		"title": {
+			"default": "localized_practice",
+			"gamified_title": "localized_gamified_practice"
+		},
+		"participants": [{
+			"participant_code": "AA",
+			"age": 22.34,
+			"date_of_birth": 20101231,
+			"userid": 1234512345
+		}, {
+			"participant_code": "BB",
+			"age": 23.34,
+			"date_of_birth": 20101131,
+			"userid": 12347823930
+		}],
+		"experimenter": [{
+			"experimenter_code": "NN",
+			"role": "observer",
+			"userid": 1234512345
+		}, {
+			"experimenter_code": "RT",
+			"role": "test_administrator",
+			"userid": 12347823930
+		}],
+		"description": {
+			"default": ""
+		},
+		"instructions": {
+			"default": "localized_instructions_for_child"
+		},
+		"promptUserBeforeContinuing": {
+			"text": "localized_instructions_for_child",
+			"audioFile": ""
+		},
+		"reinforcementAnimation": {
+			"animationImages": [{
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}],
+			"firstImageSrc": "assets/img/blank.png",
+			"lastImageSrc": "assets/stimuli/image/counter.jpg"
+		},
+		"trials": [{
+			"responses": [],
+			"stimulus": {
+				"phonemic": "χχ",
+				"audio": "χχ",
+				"orthographic": "xx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "χχ",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "χχ",
+				"audio": "χχ",
+				"orthographic": "xx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "χχ",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "χχ",
+				"audio": "χχ",
+				"orthographic": "xx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "χχ",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "χχ",
+				"audio": "χχ",
+				"orthographic": "xx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "χχ",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "χχ",
+				"audio": "χχ",
+				"orthographic": "xx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "χχ",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}],
+		"scoreSubTotal": 0
+	}, {
+		"label": "testblock",
+		"title": {
+			"default": "localized_practice",
+			"gamified_title": "localized_gamified_practice"
+		},
+		"participants": [{
+			"participant_code": "AA",
+			"age": 22.34,
+			"date_of_birth": 20101231,
+			"userid": 1234512345
+		}, {
+			"participant_code": "BB",
+			"age": 23.34,
+			"date_of_birth": 20101131,
+			"userid": 12347823930
+		}],
+		"experimenter": [{
+			"experimenter_code": "NN",
+			"role": "observer",
+			"userid": 1234512345
+		}, {
+			"experimenter_code": "RT",
+			"role": "test_administrator",
+			"userid": 12347823930
+		}],
+		"description": {
+			"default": "localized_description_for_child"
+		},
+		"instructions": {
+			"default": "localized_instructions_for_child"
+		},
+		"promptUserBeforeContinuing": {
+			"text": "localized_ready",
+			"audioFile": ""
+		},
+		"reinforcementAnimation": {
+			"animationImages": [{
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}, {
+				"incompleteImageFile": "counter.jpg"
+			}],
+			"firstImageSrc": "assets/stimuli/image/counter.jpg",
+			"lastImageSrc": "assets/stimuli/image/counter.jpg"
+		},
+		"trials": [{
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "gi",
+				"audio": "gi",
+				"orthographic": "Guy",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "gi",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "gwi",
+				"audio": "gwi",
+				"orthographic": "x",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "gwi",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ŋgi",
+				"audio": "ŋgi",
+				"orthographic": "ŋgi",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "ŋgi",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "gi",
+				"audio": "gi",
+				"orthographic": "Guy",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "gi",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "gji",
+				"audio": "gji",
+				"orthographic": "gji",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "gji",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "gi",
+				"audio": "gi",
+				"orthographic": "Guy",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "gi",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"audio": "gʁi",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "gi",
+				"audio": "gi",
+				"orthographic": "Guy",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "gi",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}],
+		"scoreSubTotal": 0
+	}]
+}

@@ -23,8 +23,8 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
             audioPath += "/";
 
             stimulus.audioFile = audioPath + stimulus.stimulus.audioFile;
-            stimulus.visualChoiceA = imagePath + "/gris.png";
-            stimulus.visualChoiceB = imagePath + "/pas_gris.png";
+            stimulus.visualChoiceA = imagePath + "/placeholder.jpg";
+            stimulus.visualChoiceB = imagePath + "/x.png";
             this.super(stimulus);
             this.playAudio(1000);
 
