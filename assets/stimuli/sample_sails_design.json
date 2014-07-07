@@ -48,7 +48,7 @@
 	},
 	"imageAssetsPath": "../../assets/stimuli/image",
 	"audioAssetsPath": "assets/stimuli/audio",
-	"iconSrc": "../../assets/img/ic_sails128.png",
+	"iconSrc": "../../assets/stimuli/image/placeholder.jpg",
 	"congratulationsImageSrc":"sails_congratulations.png",
 	"scoreTotal": 0,
 	"subexperiments": [{
