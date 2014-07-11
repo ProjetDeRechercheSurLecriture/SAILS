@@ -1,22 +1,22 @@
 {
-    "name": "pre-sails",
-    "version": "0.1.5",
-    "dependencies": {
-        "montage": "git://github.com/cesine/montage.git#chromeApp",
-        "digit": "~0.4.0",
-        "oprime-montage": "git://github.com/ProjetDeRechercheSurLecriture/oprime-montage.git"
-    },
-    "devDependencies": {
-        "grunt": "*",
-        "grunt-exec": "*",
-        "grunt-contrib-jshint": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-contrib-copy": "*",
-        "cordova": "*",
-        "mop": "*"
-    },
-    "exclude": [
-        "run-tests.html",
-        "test"
-    ]
+  "name": "pre-sails",
+  "version": "0.1.5",
+  "dependencies": {
+    "digit": "^0.5.1",
+    "montage": "^0.14.11",
+    "oprime-montage": "git://github.com/ProjetDeRechercheSurLecriture/oprime-montage.git"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-exec": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-copy": "*",
+    "cordova": "*",
+    "mop": "*"
+  },
+  "exclude": [
+    "run-tests.html",
+    "test"
+  ]
 }
