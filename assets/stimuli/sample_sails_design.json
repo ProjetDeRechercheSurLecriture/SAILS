@@ -47,7 +47,7 @@
 		"for_experimentAdministratorSpecialist": "localized_end_instructions_for_slp"
 	},
 	"imageAssetsPath": "../../assets/stimuli/image",
-	"audioAssetsPath": "assets/stimuli/audio",
+	"audioAssetsPath": "www/assets/stimuli/audio",
 	"iconSrc": "../../assets/stimuli/image/placeholder.jpg",
 	"congratulationsImageSrc":"sails_congratulations.png",
 	"scoreTotal": 0,
@@ -118,7 +118,6 @@
 			"responses": [],
 			"stimulus": {
 				"phonemic": "χχ",
-				"audio": "χχ",
 				"orthographic": "xx",
 				"audioFile": "placeholder.mp3"
 			},
@@ -172,7 +171,40 @@
 			"responses": [],
 			"stimulus": {
 				"phonemic": "χχ",
-				"audio": "χχ",
+				"orthographic": "xx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "x.png",
+				"phonemic": "χχ",
+				"orthographic": "x"
+			},
+			"distractors": [{
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx",
+				"audioFile": "placeholder.mp3"
+			},
+			"target": {
+				"imageFile": "placeholder.jpg",
+				"phonemic": "ʁχχ",
+				"orthographic": "rxx"
+			},
+			"distractors": [{
+				"imageFile": "x.png",
+				"phonemic": "*",
+				"orthographic": "x"
+			}]
+		}, {
+			"responses": [],
+			"stimulus": {
+				"phonemic": "χχ",
 				"orthographic": "xx",
 				"audioFile": "placeholder.mp3"
 			},
@@ -207,44 +239,7 @@
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "χχ",
-				"audio": "χχ",
-				"orthographic": "xx",
-				"audioFile": "placeholder.mp3"
-			},
-			"target": {
-				"imageFile": "x.png",
-				"phonemic": "χχ",
-				"orthographic": "x"
-			},
-			"distractors": [{
-				"imageFile": "placeholder.jpg",
 				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
-			}]
-		}, {
-			"responses": [],
-			"stimulus": {
-				"phonemic": "ʁχχ",
-				"audio": "gʁi",
-				"orthographic": "rxx",
-				"audioFile": "placeholder.mp3"
-			},
-			"target": {
-				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
-			},
-			"distractors": [{
-				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
-			}]
-		}, {
-			"responses": [],
-			"stimulus": {
-				"phonemic": "ʁχχ",
-				"audio": "gʁi",
 				"orthographic": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
@@ -262,7 +257,6 @@
 			"responses": [],
 			"stimulus": {
 				"phonemic": "χχ",
-				"audio": "χχ",
 				"orthographic": "xx",
 				"audioFile": "placeholder.mp3"
 			},
@@ -280,7 +274,6 @@
 			"responses": [],
 			"stimulus": {
 				"phonemic": "χχ",
-				"audio": "χχ",
 				"orthographic": "xx",
 				"audioFile": "placeholder.mp3"
 			},
