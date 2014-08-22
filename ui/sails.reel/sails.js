@@ -3,7 +3,7 @@
  * @requires oprime-montage/ui/experiment
  */
 var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
-    designToForceIncludeInMop = require("assets/stimuli/sample_sails_design.json");
+    designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
 // sampleResultToForceIncludeInMop = requi re("assets/stimuli/sails_sample_result.json");
 
 var enLocales = require("assets/stimuli/locale/en/messages.json");
@@ -19,7 +19,7 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     constructor: {
         value: function SAILS() {
             // console.log(designToForceIncludeInMop);
-            this.experimentalDesignSrc = "assets/stimuli/sample_sails_design.json";
+            this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
             this.loadDesign(designToForceIncludeInMop);
             
