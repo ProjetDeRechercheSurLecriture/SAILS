@@ -398,7 +398,9 @@
             "bindings": {
                 "experimentalDesign": {"<->": "@owner.experimentalDesign"},
                 "description": {"<-": "@owner.description"},
-                "title": {"<-": "@owner.title"}
+                "title": {"<-": "@owner.title"},
+                "corpus": {"<->": "@owner.application.corpus"},
+                "stimuliCorpus": {"<->": "@owner.application.stimuliCorpus"}
             }
         },
         "tutorial": {

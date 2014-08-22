@@ -21,8 +21,11 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
             // console.log(designToForceIncludeInMop);
             this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
             this.super();
+
+            this.stimuliDBname = "sails-fr-ca";
+            this.dbUrl = "https://corpusdev.example.org";
             this.loadDesign(designToForceIncludeInMop);
-            
+
             this.canReplayStimuli = true;
             this.canPauseStimuli = true;
 
