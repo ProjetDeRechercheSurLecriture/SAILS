@@ -24,11 +24,18 @@
                     "<-": "@owner.application.currentAudience.key != 'debug'"
                 }
             }
-        },  
+        },
         "audiencesList": {
             "prototype": "oprime-montage/ui/audiences.reel",
             "properties": {
                 "element": {"#": "audiencesList"}
+            }
+        },
+
+        "participantsSelect": {
+            "prototype": "oprime-montage/ui/participants-select.reel",
+            "properties": {
+                "element": {"#": "participantsSelect"}
             }
         },
 
@@ -391,7 +398,9 @@
             "bindings": {
                 "experimentalDesign": {"<->": "@owner.experimentalDesign"},
                 "description": {"<-": "@owner.description"},
-                "title": {"<-": "@owner.title"}
+                "title": {"<-": "@owner.title"},
+                "corpus": {"<->": "@owner.application.corpus"},
+                "stimuliCorpus": {"<->": "@owner.application.stimuliCorpus"}
             }
         },
         "tutorial": {
@@ -405,7 +414,7 @@
                 "instructions": {"<-": "@owner.instructions"},
                 "audio": {"<-": "@owner.instructionsAudioDetails"},
                 "iconSrc" : {"<-": "@owner.iconSrc"}
-                
+
             }
         },
         "showGameCondition": {
@@ -507,6 +516,7 @@
     <div data-montage-id="experiment" class="Experiment SAILS">
         <div data-montage-id="showStartButtonCondition"  class="Experiment-start-pause-button-area">
             <button data-montage-id="startExperiment" class="Experiment-start-pause-button"></button>
+            <span data-montage-id="participantsSelect"></span>
             <button data-montage-id="resumeExperiment" class="Experiment-start-pause-button"></button>
             <button hidden data-montage-id="resumeAPreviousExperiment" class="Experiment-start-pause-button"></button>
 
@@ -525,7 +535,7 @@
                 </div>
             </header>
             <div data-montage-id="stimulus"></div>
-            <div hidden data-montage-id="reinforcement"></div> 
+            <div hidden data-montage-id="reinforcement"></div>
         </div>
         <div data-montage-id="showTutorialCondition" class="Experiment-details">
             <div data-montage-id="tutorial"></div>
