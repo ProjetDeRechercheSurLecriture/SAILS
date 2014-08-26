@@ -53,6 +53,15 @@
 	},
 	"localized_ready": {
 		"message": "Prêt(e)?"
+	},
+	"sound_check_warning": {
+		"message": "L’administration de cette tâche de dépistage demande l’utilisation d’écouteurs, pour la présentation du son, et l’enregistrement de la parole de l’enfant."
+	},
+	"sound_check_button_text": {
+		"message": "Cliquez ici pour vérifier vos périphériques d’entrée et de sortie!"
+	},
+	"plug_in_headphones": {
+		"message": "S'il vous plaît, connecter des écouteurs, et parler afin verifier votre microphone. Si vous n'entendez rien, que clicker sur \"Allow\" à droit en haut."
 	}
 }
 
