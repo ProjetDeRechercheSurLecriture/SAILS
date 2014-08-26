@@ -25,6 +25,7 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
             this.stimuliDBname = "sails-fr-ca";
             this.dbUrl = "https://corpusdev.example.org";
             this.loadDesign(designToForceIncludeInMop);
+            this.recordUsingMicrophoneOnly = true;
 
             this.canReplayStimuli = true;
             this.canPauseStimuli = true;
