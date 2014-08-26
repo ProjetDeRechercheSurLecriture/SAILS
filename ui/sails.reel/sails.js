@@ -2,9 +2,7 @@
  * @module ui/sails.reel
  * @requires oprime-montage/ui/experiment
  */
-var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
-    designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
-// sampleResultToForceIncludeInMop = requi re("assets/stimuli/sails_sample_result.json");
+var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
 
 var enLocales = require("assets/stimuli/locale/en/messages.json");
 var frLocales = require("assets/stimuli/locale/fr/messages.json");
@@ -18,13 +16,12 @@ var iuLocales = require("assets/stimuli/locale/iu/messages.json");
 var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     constructor: {
         value: function SAILS() {
-            // console.log(designToForceIncludeInMop);
-            this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
+            this.experimentalDesignSrc = "gris";
             this.super();
 
             this.stimuliDBname = "sails-fr-ca";
             this.dbUrl = "https://corpusdev.example.org";
-            this.loadDesign(designToForceIncludeInMop);
+            this.loadDesign();
             this.recordUsingMicrophoneOnly = true;
 
             this.canReplayStimuli = true;
