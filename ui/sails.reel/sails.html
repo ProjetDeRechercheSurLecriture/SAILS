@@ -51,7 +51,7 @@
         "chooseLanguagePromiseController": {
             "prototype": "montage/core/promise-controller",
             "bindings": {
-                "value": {"<-": "@owner.contextualizer.localize('change_experiment_language')"}
+                "value": {"<-": "@owner.contextualizer.localize('locale_change_experiment_language')"}
             }
         },
 
@@ -443,7 +443,7 @@
                 "element": {"#": "soundCheckWarning"}
             },
             "bindings": {
-                "value": {"<-": "@owner.application.contextualizer.localize(\"sound_check_warning\")"}
+                "value": {"<-": "@owner.application.contextualizer.localize(\"locale_sound_check_warning\")"}
             }
         },
         "showStartButtonCondition": {
@@ -518,7 +518,7 @@
                 "enabled": true
             },
             "bindings":{
-                "label": {"<-": "@owner.application.contextualizer.localize(\"sound_check_button_text\")"}
+                "label": {"<-": "@owner.application.contextualizer.localize(\"locale_sound_check_button_text\")"}
             },
             "listeners": [{
                 "type": "action",

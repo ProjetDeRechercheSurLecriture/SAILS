@@ -1,7 +1,7 @@
 {
 	"title": {
-		"default": "localized_title",
-		"gamified_title": "localized_gamified_title"
+		"default": "locale_title",
+		"gamified_title": "locale_gamified_title"
 	},
 	"database": "https://corpusdev.lingsync.org/testingphophlo-debugging",
 	"participants": [{
@@ -25,26 +25,26 @@
 		"userid": 12347823930
 	}],
 	"description": {
-		"default": "localized_description_for_teacher",
-		"for_child": "localized_description_for_child",
-		"for_parent": "localized_description_for_parent",
-		"for_experimentAdministrator": "localized_description_for_teacher",
-		"for_school_records": "localized_description_for_school_record",
-		"for_experimentAdministratorSpecialist": "localized_description_for_slp"
+		"default": "locale_description_for_teacher",
+		"for_child": "locale_description_for_child",
+		"for_parent": "locale_description_for_parent",
+		"for_experimentAdministrator": "locale_description_for_teacher",
+		"for_school_records": "locale_description_for_school_record",
+		"for_experimentAdministratorSpecialist": "locale_description_for_slp"
 	},
 	"instructions": {
-		"default": "localized_instructions_for_teacher",
-		"for_child": "localized_instructions_for_child",
-		"for_parent": "localized_instructions_for_parent",
-		"for_experimentAdministrator": "localized_instructions_for_teacher",
-		"for_school_records": "localized_instructions_for_school_record",
-		"for_experimentAdministratorSpecialist": "localized_instructions_for_slp"
+		"default": "locale_instructions_for_teacher",
+		"for_child": "locale_instructions_for_child",
+		"for_parent": "locale_instructions_for_parent",
+		"for_experimentAdministrator": "locale_instructions_for_teacher",
+		"for_school_records": "locale_instructions_for_school_record",
+		"for_experimentAdministratorSpecialist": "locale_instructions_for_slp"
 	},
 	"end_instructions": {
-		"default": "localized_end_instructions_for_teacher",
-		"for_child": "localized_end_instructions_for_child",
-		"for_experimentAdministrator": "localized_end_instructions_for_teacher",
-		"for_experimentAdministratorSpecialist": "localized_end_instructions_for_slp"
+		"default": "locale_end_instructions_for_teacher",
+		"for_child": "locale_end_instructions_for_child",
+		"for_experimentAdministrator": "locale_end_instructions_for_teacher",
+		"for_experimentAdministratorSpecialist": "locale_end_instructions_for_slp"
 	},
 	"imageAssetsPath": "../../assets/stimuli/image",
 	"audioAssetsPath": "www/assets/stimuli/audio",
@@ -54,8 +54,8 @@
 	"subexperiments": [{
 		"label": "practice",
 		"title": {
-			"default": "localized_practice",
-			"gamified_title": "localized_gamified_practice"
+			"default": "locale_practice",
+			"gamified_title": "locale_gamified_practice"
 		},
 		"participants": [{
 			"participant_code": "AA",
@@ -81,10 +81,10 @@
 			"default": ""
 		},
 		"instructions": {
-			"default": "localized_instructions_for_child"
+			"default": "locale_instructions_for_child"
 		},
 		"promptUserBeforeContinuing": {
-			"text": "localized_instructions_for_child",
+			"text": "locale_instructions_for_child",
 			"audioFile": ""
 		},
 		"reinforcementAnimation": {
@@ -292,8 +292,8 @@
 	}, {
 		"label": "testblock",
 		"title": {
-			"default": "localized_practice",
-			"gamified_title": "localized_gamified_practice"
+			"default": "locale_practice",
+			"gamified_title": "locale_gamified_practice"
 		},
 		"participants": [{
 			"participant_code": "AA",
@@ -316,13 +316,13 @@
 			"userid": 12347823930
 		}],
 		"description": {
-			"default": "localized_description_for_child"
+			"default": "locale_description_for_child"
 		},
 		"instructions": {
-			"default": "localized_instructions_for_child"
+			"default": "locale_instructions_for_child"
 		},
 		"promptUserBeforeContinuing": {
-			"text": "localized_ready",
+			"text": "locale_ready",
 			"audioFile": ""
 		},
 		"reinforcementAnimation": {
