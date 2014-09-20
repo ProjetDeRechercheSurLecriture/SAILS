@@ -4,10 +4,6 @@
  */
 var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
 
-// var enLocales = require("assets/stimuli/locale/en/messages.json");
-// var frLocales = require("assets/stimuli/locale/fr/messages.json");
-// var iuLocales = require("assets/stimuli/locale/iu/messages.json");
-
 
 /**
  * @class SAILS
@@ -26,11 +22,6 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
 
             this.canReplayStimuli = true;
             this.canPauseStimuli = true;
-
-            //automatically handled by the corpus?
-            // this.contextualizer.addMessagesToContextualizedStrings("en", enLocales);
-            // this.contextualizer.addMessagesToContextualizedStrings("fr", frLocales);
-            // this.contextualizer.addMessagesToContextualizedStrings("iu", iuLocales);
 
             this.application.currentStimuliDialect = {
                 "iso": "fr",

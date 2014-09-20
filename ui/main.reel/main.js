@@ -2,19 +2,15 @@
  * @module ui/main.reel
  * @requires core/contextualizable-component
  */
-var ContextualizableComponent = require("oprime-montage/core/contextualizable-component").ContextualizableComponent;
+var OPrimeMain = require("oprime-montage/ui/main.reel").Main;
 
 // var enLocales = require("oprime-montage/locale/en/messages.json");
 // var frLocales = require("oprime-montage/locale/fr/messages.json");
-
-// var enExperimentLocalizations = require("assets/stimuli/locale/en/messages.json");
-// var frExperimentLocalizations = require("assets/stimuli/locale/fr/messages.json");
-
 /**
  * @class Main
- * @extends ContextualizableComponent
+ * @extends OPrimeMain
  */
-exports.Main = ContextualizableComponent.specialize( /** @lends Main# */ {
+exports.Main = OPrimeMain.specialize( /** @lends Main# */ {
 	constructor: {
 		value: function Main() {
 			// localStorage.setItem("montage_locale", "fr");
