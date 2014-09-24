@@ -17,14 +17,7 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
     },
     load: {
         value: function(stimulus) {
-            var imagePath = this.imageAssetsPath || "missingpath";
-            imagePath += "/";
-            var audioPath = this.audioAssetsPath || "missingpath";
-            audioPath += "/";
-
-            stimulus.audioFile = audioPath + stimulus.stimulus.audioFile;
-            stimulus.visualChoiceA = imagePath + "/placeholder.jpg";
-            stimulus.visualChoiceB = imagePath + "/x.png";
+            stimulus.audioFile = stimulus.audioVideo._collection[0].URL;
             this.super(stimulus);
             this.playAudio(1000);
 
