@@ -17,6 +17,10 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
     },
     load: {
         value: function(stimulus) {
+
+            stimulus.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
+            stimulus.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
+
             stimulus.audioFile = stimulus.audioVideo._collection[0].URL;
             this.super(stimulus);
             this.playAudio(1000);
