@@ -62,9 +62,9 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
                         imageFile: "placeholder.jpg",
                         carrierAudio: ""
                     };
-                    stimulus.prime.phonemic = stimulus.auditoryStimulus;
+                    stimulus.prime.utterance = stimulus.auditoryStimulus;
                     stimulus.prime.audio = stimulus.auditoryStimulus;
-                    stimulus.prime.orthographic = stimulus.auditoryStimulus;
+                    stimulus.prime.orthography = stimulus.auditoryStimulus;
                     delete stimulus.auditoryStimulus;
                     delete stimulus.transcription;
 
@@ -72,12 +72,12 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
                     delete stimulus.audioFile;
 
                     if (stimulus.response === "rxx") {
-                        stimulus.target.phonemic = "ʁχχ";
-                        stimulus.target.orthographic = "rxx";
-                        stimulus.prime.orthographic = "rxx";
+                        stimulus.target.utterance = "ʁχχ";
+                        stimulus.target.orthography = "rxx";
+                        stimulus.prime.orthography = "rxx";
                     } else {
-                        stimulus.target.phonemic = "*";
-                        stimulus.target.orthographic = "X";
+                        stimulus.target.utterance = "*";
+                        stimulus.target.orthography = "X";
                     }
                     delete stimulus.targetImage;
                     delete stimulus.distractorImages;

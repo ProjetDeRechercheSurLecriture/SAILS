@@ -117,175 +117,175 @@
 		"trials": [{
 			"responses": [],
 			"stimulus": {
-				"phonemic": "χχ",
-				"orthographic": "xx",
+				"utterance": "χχ",
+				"orthography": "xx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "χχ",
-				"orthographic": "x"
+				"utterance": "χχ",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
+				"utterance": "ʁχχ",
 				"audio": "gʁi",
-				"orthographic": "rxx",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
+				"utterance": "ʁχχ",
 				"audio": "gʁi",
-				"orthographic": "rxx",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "χχ",
-				"orthographic": "xx",
+				"utterance": "χχ",
+				"orthography": "xx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "χχ",
-				"orthographic": "x"
+				"utterance": "χχ",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx",
+				"utterance": "ʁχχ",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "χχ",
-				"orthographic": "xx",
+				"utterance": "χχ",
+				"orthography": "xx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "χχ",
-				"orthographic": "x"
+				"utterance": "χχ",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
+				"utterance": "ʁχχ",
 				"audio": "gʁi",
-				"orthographic": "rxx",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx",
+				"utterance": "ʁχχ",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "χχ",
-				"orthographic": "xx",
+				"utterance": "χχ",
+				"orthography": "xx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "χχ",
-				"orthographic": "x"
+				"utterance": "χχ",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "χχ",
-				"orthographic": "xx",
+				"utterance": "χχ",
+				"orthography": "xx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "χχ",
-				"orthographic": "x"
+				"utterance": "χχ",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}],
 		"scoreSubTotal": 0
@@ -353,182 +353,182 @@
 		"trials": [{
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
+				"utterance": "ʁχχ",
 				"audio": "gʁi",
-				"orthographic": "rxx",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
+				"utterance": "ʁχχ",
 				"audio": "gʁi",
-				"orthographic": "rxx",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "gi",
+				"utterance": "gi",
 				"audio": "gi",
-				"orthographic": "Guy",
+				"orthography": "Guy",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "gi",
-				"orthographic": "x"
+				"utterance": "gi",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "gwi",
+				"utterance": "gwi",
 				"audio": "gwi",
-				"orthographic": "x",
+				"orthography": "x",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "gwi",
-				"orthographic": "x"
+				"utterance": "gwi",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ŋgi",
+				"utterance": "ŋgi",
 				"audio": "ŋgi",
-				"orthographic": "ŋgi",
+				"orthography": "ŋgi",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "ŋgi",
-				"orthographic": "x"
+				"utterance": "ŋgi",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "gi",
+				"utterance": "gi",
 				"audio": "gi",
-				"orthographic": "Guy",
+				"orthography": "Guy",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "gi",
-				"orthographic": "x"
+				"utterance": "gi",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "gji",
+				"utterance": "gji",
 				"audio": "gji",
-				"orthographic": "gji",
+				"orthography": "gji",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "gji",
-				"orthographic": "x"
+				"utterance": "gji",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "gi",
+				"utterance": "gi",
 				"audio": "gi",
-				"orthographic": "Guy",
+				"orthography": "Guy",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "gi",
-				"orthographic": "x"
+				"utterance": "gi",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "ʁχχ",
+				"utterance": "ʁχχ",
 				"audio": "gʁi",
-				"orthographic": "rxx",
+				"orthography": "rxx",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			},
 			"distractors": [{
 				"imageFile": "x.png",
-				"phonemic": "*",
-				"orthographic": "x"
+				"utterance": "*",
+				"orthography": "x"
 			}]
 		}, {
 			"responses": [],
 			"stimulus": {
-				"phonemic": "gi",
+				"utterance": "gi",
 				"audio": "gi",
-				"orthographic": "Guy",
+				"orthography": "Guy",
 				"audioFile": "placeholder.mp3"
 			},
 			"target": {
 				"imageFile": "x.png",
-				"phonemic": "gi",
-				"orthographic": "x"
+				"utterance": "gi",
+				"orthography": "x"
 			},
 			"distractors": [{
 				"imageFile": "placeholder.jpg",
-				"phonemic": "ʁχχ",
-				"orthographic": "rxx"
+				"utterance": "ʁχχ",
+				"orthography": "rxx"
 			}]
 		}],
 		"scoreSubTotal": 0
