@@ -20,16 +20,48 @@ SailsStimulus.prototype = Object.create(AbstractStimulus.prototype, /** @lends S
     },
 
     load: {
-        value: function(stimulus) {
+        value: function(stimulusDetails) {
 
-            stimulus.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
-            stimulus.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
+            this.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
+            this.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
+            this.audioFile = stimulusDetails.audioVideo._collection[0].URL;
 
-            stimulus.audioFile = stimulus.audioVideo._collection[0].URL;
-            this.super(stimulus);
+            this.layout = {
+                randomize: false,
+                visualChoiceA: this.visualChoiceA,
+                visualChoiceB: this.visualChoiceB
+            };
+            this.target = this.target || {};
+            this.target.orthography = stimulusDetails.datumFields.orthography.value;
+            this.target.utterance = stimulusDetails.datumFields.utterance.value;
+            this.target.imageFile = stimulusDetails.images._collection[0].URL;
+            this.target.audioFile = this.audioFile;
+
+            this.prime = this.prime || {};
+            this.prime.audioFile = this.audioFile;
+            this.prime.imageFile = "";
+            this.prime.orthography = this.target.orthography;
+            this.prime.utterance = this.target.utterance;
+
+            if (this.target.utterance === "gʁi") {
+                this.distractors = [{
+                    imageFile: "pas_gris.png",
+                    utterance: "pas gʁi",
+                    orthography: "pas gris",
+                    audioFile: ""
+                }];
+            } else {
+                this.distractors = [{
+                    imageFile: "gris.png",
+                    utterance: "gʁi",
+                    orthography: "gris",
+                    audioFile: ""
+                }];
+            }
+            AbstractStimulus.prototype.load.apply(this, []);
             this.playAudio(1000);
 
         }
     }
 });
-exports.SailsStimulus = SailsStimulus;
+exports.SailsStimulus = AbstractStimulus;
