@@ -16,45 +16,45 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
         }
     },
     load: {
-        value: function(stimulusDetails) {
+        value: function(model) {
 
-            this.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
-            this.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
-            this.audioFile = stimulusDetails.audioVideo._collection[0].URL;
+            model.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
+            model.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
+            model.audioFile = model.audioVideo._collection[0].URL;
 
-            this.layout = {
+            model.layout = {
                 randomize: false,
-                visualChoiceA: this.visualChoiceA,
-                visualChoiceB: this.visualChoiceB
+                visualChoiceA: model.visualChoiceA,
+                visualChoiceB: model.visualChoiceB
             };
-            this.target = this.target || {};
-            this.target.orthography = stimulusDetails.datumFields.orthography.value;
-            this.target.utterance = stimulusDetails.datumFields.utterance.value;
-            this.target.imageFile = stimulusDetails.images._collection[0].URL;
-            this.target.audioFile = this.audioFile;
+            model.target = model.target || {};
+            model.target.orthography = model.datumFields.orthography.value;
+            model.target.utterance = model.datumFields.utterance.value;
+            model.target.imageFile = model.images._collection[0].URL;
+            model.target.audioFile = model.audioFile;
 
-            this.prime = this.prime || {};
-            this.prime.audioFile = this.audioFile;
-            this.prime.imageFile = "";
-            this.prime.orthography = this.target.orthography;
-            this.prime.utterance = this.target.utterance;
+            model.prime = model.prime || {};
+            model.prime.audioFile = model.audioFile;
+            model.prime.imageFile = "";
+            model.prime.orthography = model.target.orthography;
+            model.prime.utterance = model.target.utterance;
 
-            if (this.target.utterance === "gʁi") {
-                this.distractors = [{
+            if (model.target.utterance === "gʁi") {
+                model.distractors = [{
                     imageFile: "pas_gris.png",
                     utterance: "pas gʁi",
                     orthography: "pas gris",
                     audioFile: ""
                 }];
             } else {
-                this.distractors = [{
+                model.distractors = [{
                     imageFile: "gris.png",
                     utterance: "gʁi",
                     orthography: "gris",
                     audioFile: ""
                 }];
             }
-            AbstractStimulus.prototype.load.apply(this, []);
+            this.super(model);
             this.playAudio(1000);
 
         }
