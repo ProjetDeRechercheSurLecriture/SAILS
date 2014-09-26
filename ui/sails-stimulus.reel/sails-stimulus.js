@@ -8,17 +8,13 @@ var AbstractStimulus = require("oprime-montage/core/abstract-stimulus").Abstract
  * @class SailsStimulus
  * @extends AbstractStimulus
  */
-var SailsStimulus = function SailsStimulus(options) {
-    this.debug("Constructing SailsStimulus ", options);
-    AbstractStimulus.apply(this, arguments);
-    this.confirmResponseChoiceMessage = "locale_confirm_choice";
-};
-
-SailsStimulus.prototype = Object.create(AbstractStimulus.prototype, /** @lends SailsStimulus.prototype */ {
+exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# */ {
     constructor: {
-        value: SailsStimulus
+        value: function SailsStimulus() {
+            this.super();
+            this.confirmResponseChoiceMessage = "locale_confirm_choice";
+        }
     },
-
     load: {
         value: function(stimulusDetails) {
 
@@ -64,4 +60,3 @@ SailsStimulus.prototype = Object.create(AbstractStimulus.prototype, /** @lends S
         }
     }
 });
-exports.SailsStimulus = AbstractStimulus;
