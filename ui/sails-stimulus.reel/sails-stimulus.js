@@ -54,6 +54,19 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
                     audioFile: ""
                 }];
             }
+
+            if (model.target.imageFile.substring(model.target.imageFile.lastIndexOf("/") + 1) === model.visualChoiceA.substring(model.visualChoiceA.lastIndexOf("/") + 1) ) {
+                console.info("===== The target of this stimulus " + model.target.utterance + " is positioned in visualChoiceA");
+
+                model.target.visualChoice = "visualChoiceA";
+                model.distractors[0].visualChoice = "visualChoiceB";
+            } else {
+                console.info("===== The target of this stimulus " + model.target.utterance + " is positioned in visualChoiceB");
+
+                model.target.visualChoice = "visualChoiceB";
+                model.distractors[0].visualChoice = "visualChoiceA";
+            }
+
             this.super(model);
             this.playAudio(1000);
 
