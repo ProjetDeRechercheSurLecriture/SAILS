@@ -20,7 +20,16 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
 
             model.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
             model.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
-            model.audioFile = model.audioVideo._collection[0].URL;
+            if (model && model.audioVideo && model.audioVideo._collection && model.audioVideo._collection[0] && model.audioVideo._collection[0].URL) {
+                model.audioFile = model.audioVideo._collection[0].URL;
+            } else {
+                if (model && model._audioVideo && model._audioVideo._collection && model._audioVideo._collection[0] && model._audioVideo._collection[0].URL) {
+                    model.audioFile = model._audioVideo._collection[0].URL;
+                } else {
+                    console.warn("MINIFICATION IS BREAKING THE IMAGES OBJECTS ALSO");
+                    model.audioFile = "gammatone.wav";
+                }
+            }
 
             model.layout = {
                 randomize: false,
@@ -28,9 +37,40 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
                 visualChoiceB: model.visualChoiceB
             };
             model.target = model.target || {};
-            model.target.orthography = model.datumFields.orthography.value;
-            model.target.utterance = model.datumFields.utterance.value;
-            model.target.imageFile = model.images._collection[0].URL;
+            if (model && model.datumFields && model.datumFields.orthography && model.datumFields.orthography.value) {
+                model.target.orthography = model.datumFields.orthography.value;
+            } else {
+                console.warn("THIS DATUM HAS NO ORTHOGRAPHY MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model.datumFields, model._datumFields);
+                if (model && model._datumFields && model._datumFields.orthography && model._datumFields.orthography._value) {
+                    console.warn("USING _ FIELDS ", model._datumFields.orthography, model._datumFields.orthography._value);
+                    model.target.orthography = model._datumFields.orthography._value;
+                } else {
+                    model.target.orthography = "";
+                }
+            }
+            if (model && model.datumFields && model.datumFields.utterance && model.datumFields.utterance.value) {
+                model.target.utterance = model.datumFields.utterance.value;
+            } else {
+                console.warn("THIS DATUM HAS NO UTTERANCE MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model.datumFields, model._datumFields);
+                if (model && model._datumFields && model._datumFields.utterance && model._datumFields.utterance._value) {
+                    console.warn("USING _ FIELDS ", model._datumFields.utterance, model._datumFields.utterance._value);
+                    model.target.utterance = model._datumFields.utterance._value;
+                } else {
+                    model.target.utterance = "";
+                }
+            }
+            // model.target.imageFile = model.images._collection[0].URL;
+            if (model && model.images && model.images._collection && model.images._collection[0] && model.images._collection[0].URL) {
+                model.target.imageFile = model.images._collection[0].URL;
+            } else {
+                if (model && model.images && model.images._collection && model.images._collection[0] && model.images._collection[0].URL) {
+                    model.target.imageFile = model.images._collection[0].URL;
+                } else {
+                    console.warn("MINIFICATION IS BREAKING THE IMAGES OBJECTS ALSO");
+                    model.target.imageFile = "placeholder.png";
+                }
+            }
+
             model.target.audioFile = model.audioFile;
 
             model.prime = model.prime || {};
@@ -55,7 +95,7 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
                 }];
             }
 
-            if (model.target.imageFile.substring(model.target.imageFile.lastIndexOf("/") + 1) === model.visualChoiceA.substring(model.visualChoiceA.lastIndexOf("/") + 1) ) {
+            if (model.target.imageFile.substring(model.target.imageFile.lastIndexOf("/") + 1) === model.visualChoiceA.substring(model.visualChoiceA.lastIndexOf("/") + 1)) {
                 console.info("===== The target of this stimulus " + model.target.utterance + " is positioned in visualChoiceA");
 
                 model.target.visualChoice = "visualChoiceA";
