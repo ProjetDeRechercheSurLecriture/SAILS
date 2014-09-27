@@ -27,7 +27,7 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
                 "name": "French",
                 "nativeName": "français"
             };
-            this.contextualizer.currentLocale = this.application.currentStimuliDialect.iso;
+            this.contextualizer.currentLocale = this.application.currentStimuliDialect;
         }
     },
 
