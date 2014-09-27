@@ -63,8 +63,8 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
             if (model && model.images && model.images._collection && model.images._collection[0] && model.images._collection[0].URL) {
                 model.target.imageFile = model.images._collection[0].URL;
             } else {
-                if (model && model.images && model.images._collection && model.images._collection[0] && model.images._collection[0].URL) {
-                    model.target.imageFile = model.images._collection[0].URL;
+                if (model && model._images && model._images._collection && model._images._collection[0] && model._images._collection[0].URL) {
+                    model.target.imageFile = model._images._collection[0].URL;
                 } else {
                     console.warn("MINIFICATION IS BREAKING THE IMAGES OBJECTS ALSO");
                     model.target.imageFile = "placeholder.png";
