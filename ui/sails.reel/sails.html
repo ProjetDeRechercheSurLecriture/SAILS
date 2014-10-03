@@ -253,6 +253,19 @@
             }
         },
 
+        "gameIcon": {
+            "prototype": "digit/ui/image.reel",
+            "properties": {
+                "element": {"#": "gameIcon"},
+                "enabled": true,
+                "label": "start",
+                "src": ""
+            },
+            "bindings": {
+                "src": {"<-": "@owner.iconSrc"}
+            }
+        },
+
         "resumeExperimentActionEventListener": {
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
@@ -593,6 +606,7 @@
             <span data-montage-id="experimentStimuliDialect"></span>
             <span data-montage-id="currentTestBlockLabel"></span>
             <output data-montage-id="currentStimulusIndexBadge"></output>
+            <img class="Experiment-game-icon" data-montage-id="gameIcon"/>
             <button data-montage-id="showTutorial">
                 <i class="fa fa-question-circle"></i>
             </button>
