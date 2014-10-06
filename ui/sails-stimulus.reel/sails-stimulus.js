@@ -37,24 +37,24 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
                 visualChoiceB: model.visualChoiceB
             };
             model.target = model.target || {};
-            if (model && model.datumFields && model.datumFields.orthography && model.datumFields.orthography.value) {
-                model.target.orthography = model.datumFields.orthography.value;
+            if (model && model.fields && model.fields.orthography && model.fields.orthography.value) {
+                model.target.orthography = model.fields.orthography.value;
             } else {
-                console.warn("THIS DATUM HAS NO ORTHOGRAPHY MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model.datumFields, model._datumFields);
-                if (model && model._datumFields && model._datumFields.orthography && model._datumFields.orthography._value) {
-                    console.warn("USING _ FIELDS ", model._datumFields.orthography, model._datumFields.orthography._value);
-                    model.target.orthography = model._datumFields.orthography._value;
+                console.warn("THIS DATUM HAS NO ORTHOGRAPHY MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model, model.fields, model._fields);
+                if (model && model._fields && model._fields.orthography && model._fields.orthography._value) {
+                    console.warn("USING _ FIELDS ", model._fields.orthography, model._fields.orthography._value);
+                    model.target.orthography = model._fields.orthography._value;
                 } else {
                     model.target.orthography = "";
                 }
             }
-            if (model && model.datumFields && model.datumFields.utterance && model.datumFields.utterance.value) {
-                model.target.utterance = model.datumFields.utterance.value;
+            if (model && model.fields && model.fields.utterance && model.fields.utterance.value) {
+                model.target.utterance = model.fields.utterance.value;
             } else {
-                console.warn("THIS DATUM HAS NO UTTERANCE MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model.datumFields, model._datumFields);
-                if (model && model._datumFields && model._datumFields.utterance && model._datumFields.utterance._value) {
-                    console.warn("USING _ FIELDS ", model._datumFields.utterance, model._datumFields.utterance._value);
-                    model.target.utterance = model._datumFields.utterance._value;
+                console.warn("THIS DATUM HAS NO UTTERANCE MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model, model.fields, model._fields);
+                if (model && model._fields && model._fields.utterance && model._fields.utterance._value) {
+                    console.warn("USING _ FIELDS ", model._fields.utterance, model._fields.utterance._value);
+                    model.target.utterance = model._fields.utterance._value;
                 } else {
                     model.target.utterance = "";
                 }
