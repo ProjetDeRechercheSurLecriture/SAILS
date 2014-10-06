@@ -51,7 +51,7 @@
         "chooseLanguagePromiseController": {
             "prototype": "montage/core/promise-controller",
             "bindings": {
-                "value": {"<-": "@owner.contextualizer.localize('change_experiment_language')"}
+                "value": {"<-": "@owner.contextualizer.localize('locale_change_experiment_language')"}
             }
         },
 
@@ -103,7 +103,8 @@
                 }, {
                     "iso": "iu",
                     "nativeName": "ᐃᓄᒃᑎᑐᑦ"
-                }]
+                }],
+                "labelPropertyName": "nativeName"
             },
             "bindings": {
                 "classList.has('montage-invisible')": {
@@ -247,6 +248,19 @@
                 "useCapture": false,
                 "listener": {"@": "startExperimentActionEventListener"}
             }],
+            "bindings": {
+                "src": {"<-": "@owner.iconSrc"}
+            }
+        },
+
+        "gameIcon": {
+            "prototype": "digit/ui/image.reel",
+            "properties": {
+                "element": {"#": "gameIcon"},
+                "enabled": true,
+                "label": "start",
+                "src": ""
+            },
             "bindings": {
                 "src": {"<-": "@owner.iconSrc"}
             }
@@ -427,6 +441,25 @@
                 "condition": {"<-": "@owner.currentlyPlaying"}
             }
         },
+        "showSoundCheckWarningCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "showSoundCheckWarningCondition"},
+                "removalStrategy": "hide"
+            },
+            "bindings": {
+                "condition": {"<-": "!@owner.application.videoRecordingVerified"}
+            }
+        },
+        "soundCheckWarning": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "soundCheckWarning"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.application.contextualizer.localize(\"locale_sound_check_warning\")"}
+            }
+        },
         "showStartButtonCondition": {
             "prototype": "montage/ui/condition.reel",
             "properties": {
@@ -492,6 +525,21 @@
                 "isHidden": true
             }
         },
+        "showSoundCheck": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "showSoundCheck"},
+                "enabled": true
+            },
+            "bindings":{
+                "label": {"<-": "@owner.application.contextualizer.localize(\"locale_sound_check_button_text\")"}
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
+        },
         "showResultReport": {
             "prototype": "digit/ui/button.reel",
             "properties": {
@@ -515,6 +563,13 @@
 <body>
     <div data-montage-id="experiment" class="Experiment SAILS">
         <div data-montage-id="showStartButtonCondition"  class="Experiment-start-pause-button-area">
+            <p data-montage-id="showSoundCheckWarningCondition" class="Experiment-headphones-warning"><i class="fa fa-warning"></i>
+               <span data-montage-id="soundCheckWarning">  
+                </span>
+                <br/>
+                 <button data-montage-id="showSoundCheck">
+                </button>   
+            </p>
             <button data-montage-id="startExperiment" class="Experiment-start-pause-button"></button>
             <span data-montage-id="participantsSelect"></span>
             <button data-montage-id="resumeExperiment" class="Experiment-start-pause-button"></button>
@@ -551,6 +606,7 @@
             <span data-montage-id="experimentStimuliDialect"></span>
             <span data-montage-id="currentTestBlockLabel"></span>
             <output data-montage-id="currentStimulusIndexBadge"></output>
+            <img class="Experiment-game-icon" data-montage-id="gameIcon"/>
             <button data-montage-id="showTutorial">
                 <i class="fa fa-question-circle"></i>
             </button>
@@ -561,10 +617,12 @@
                 Stimuli:
             </span>
             <span data-montage-id="audiencesList"></span>
+            <i hidden class="fa fa-eye"></i> 
             <span data-montage-id="audience"></span>
             <div data-montage-id="responses" class="Experiment-responses-display">
                 <span data-montage-id="response" class="Experiment-response-debug"></span>
             </div>
+            
         </footer>
     </div>
 </body>

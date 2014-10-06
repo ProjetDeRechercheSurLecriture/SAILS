@@ -12,20 +12,102 @@ exports.SailsStimulus = AbstractStimulus.specialize( /** @lends SailsStimulus# *
     constructor: {
         value: function SailsStimulus() {
             this.super();
-            this.confirmResponseChoiceMessage = "confirm_choice";
+            this.confirmResponseChoiceMessage = "locale_confirm_choice";
         }
     },
     load: {
-        value: function(stimulus) {
-            var imagePath = this.imageAssetsPath || "missingpath";
-            imagePath += "/";
-            var audioPath = this.audioAssetsPath || "missingpath";
-            audioPath += "/";
+        value: function(model) {
 
-            stimulus.audioFile = audioPath + stimulus.stimulus.audioFile;
-            stimulus.visualChoiceA = imagePath + "/placeholder.jpg";
-            stimulus.visualChoiceB = imagePath + "/x.png";
-            this.super(stimulus);
+            model.visualChoiceA = this.application.experiment.experimentalDesign.visualChoiceA;
+            model.visualChoiceB = this.application.experiment.experimentalDesign.visualChoiceB;
+            if (model && model.audioVideo && model.audioVideo._collection && model.audioVideo._collection[0] && model.audioVideo._collection[0].URL) {
+                model.audioFile = model.audioVideo._collection[0].URL;
+            } else {
+                if (model && model._audioVideo && model._audioVideo._collection && model._audioVideo._collection[0] && model._audioVideo._collection[0].URL) {
+                    model.audioFile = model._audioVideo._collection[0].URL;
+                } else {
+                    console.warn("MINIFICATION IS BREAKING THE IMAGES OBJECTS ALSO");
+                    model.audioFile = "gammatone.wav";
+                }
+            }
+
+            model.layout = {
+                randomize: false,
+                visualChoiceA: model.visualChoiceA,
+                visualChoiceB: model.visualChoiceB
+            };
+            model.target = model.target || {};
+            if (model && model.fields && model.fields.orthography && model.fields.orthography.value) {
+                model.target.orthography = model.fields.orthography.value;
+            } else {
+                console.warn("THIS DATUM HAS NO ORTHOGRAPHY MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model, model.fields, model._fields);
+                if (model && model._fields && model._fields.orthography && model._fields.orthography._value) {
+                    console.warn("USING _ FIELDS ", model._fields.orthography, model._fields.orthography._value);
+                    model.target.orthography = model._fields.orthography._value;
+                } else {
+                    model.target.orthography = "";
+                }
+            }
+            if (model && model.fields && model.fields.utterance && model.fields.utterance.value) {
+                model.target.utterance = model.fields.utterance.value;
+            } else {
+                console.warn("THIS DATUM HAS NO UTTERANCE MINIFYING IS BREAKING THE FIELDB OBJECTS!!!?", model, model.fields, model._fields);
+                if (model && model._fields && model._fields.utterance && model._fields.utterance._value) {
+                    console.warn("USING _ FIELDS ", model._fields.utterance, model._fields.utterance._value);
+                    model.target.utterance = model._fields.utterance._value;
+                } else {
+                    model.target.utterance = "";
+                }
+            }
+            // model.target.imageFile = model.images._collection[0].URL;
+            if (model && model.images && model.images._collection && model.images._collection[0] && model.images._collection[0].URL) {
+                model.target.imageFile = model.images._collection[0].URL;
+            } else {
+                if (model && model._images && model._images._collection && model._images._collection[0] && model._images._collection[0].URL) {
+                    model.target.imageFile = model._images._collection[0].URL;
+                } else {
+                    console.warn("MINIFICATION IS BREAKING THE IMAGES OBJECTS ALSO");
+                    model.target.imageFile = "placeholder.png";
+                }
+            }
+
+            model.target.audioFile = model.audioFile;
+
+            model.prime = model.prime || {};
+            model.prime.audioFile = model.audioFile;
+            model.prime.imageFile = "";
+            model.prime.orthography = model.target.orthography;
+            model.prime.utterance = model.target.utterance;
+
+            if (model.target.utterance === "gʁi") {
+                model.distractors = [{
+                    imageFile: "pas_gris.png",
+                    utterance: "pas gʁi",
+                    orthography: "pas gris",
+                    audioFile: ""
+                }];
+            } else {
+                model.distractors = [{
+                    imageFile: "gris.png",
+                    utterance: "gʁi",
+                    orthography: "gris",
+                    audioFile: ""
+                }];
+            }
+
+            if (model.target.imageFile.substring(model.target.imageFile.lastIndexOf("/") + 1) === model.visualChoiceA.substring(model.visualChoiceA.lastIndexOf("/") + 1)) {
+                console.info("===== The target of this stimulus " + model.target.utterance + " is positioned in visualChoiceA");
+
+                model.target.visualChoice = "visualChoiceA";
+                model.distractors[0].visualChoice = "visualChoiceB";
+            } else {
+                console.info("===== The target of this stimulus " + model.target.utterance + " is positioned in visualChoiceB");
+
+                model.target.visualChoice = "visualChoiceB";
+                model.distractors[0].visualChoice = "visualChoiceA";
+            }
+
+            this.super(model);
             this.playAudio(1000);
 
         }

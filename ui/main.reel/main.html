@@ -39,7 +39,7 @@
                 "element": {"#": "chooseLanguage"}
             },
             "bindings": {
-                "value": {"<-": "@owner.contextualizer.localize('change_language')"}
+                "value": {"<-": "@owner.contextualizer.localize('locale_change_language')"}
             }
         },
 
@@ -48,7 +48,8 @@
             "properties": {
                 "element": {"#": "locales"},
                 "globalKey": "interfaceLocale",
-                "selectedIso": "fr"
+                "selectedIso": "fr",
+                "labelPropertyName": "nativeName"
             },
             "bindings": {
                 "classList.has('montage-invisible')": {

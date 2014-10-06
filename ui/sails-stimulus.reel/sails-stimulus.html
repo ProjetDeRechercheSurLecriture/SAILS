@@ -16,10 +16,10 @@
             "prototype": "digit/ui/image.reel",
             "properties": {
                 "element": {"#": "visualChoiceA"},
-                "crossOrigin": null
+                "crossOrigin": "*"
             },
             "bindings": {
-                "src": {"<-": "@owner.visualChoiceA ?? '../../assets/img/blank.png'"}
+                "src": {"<-": "@owner.model.visualChoiceA ?? '../../assets/img/blank.png'"}
             }
         },
 
@@ -42,10 +42,10 @@
             "prototype": "digit/ui/image.reel",
             "properties": {
                 "element": {"#": "visualChoiceB"},
-                "crossOrigin": null
+                "crossOrigin": "*"
             },
             "bindings": {
-                "src": {"<-": "@owner.visualChoiceB ?? '../../assets/img/blank.png'"}
+                "src": {"<-": "@owner.model.visualChoiceB ?? '../../assets/img/blank.png'"}
             }
         }
     }

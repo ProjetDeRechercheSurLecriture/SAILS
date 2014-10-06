@@ -2,13 +2,7 @@
  * @module ui/sails.reel
  * @requires oprime-montage/ui/experiment
  */
-var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
-    designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
-// sampleResultToForceIncludeInMop = requi re("assets/stimuli/sails_sample_result.json");
-
-var enLocales = require("assets/stimuli/locale/en/messages.json");
-var frLocales = require("assets/stimuli/locale/fr/messages.json");
-var iuLocales = require("assets/stimuli/locale/iu/messages.json");
+var Experiment = require("oprime-montage/ui/experiment.reel").Experiment;
 
 
 /**
@@ -18,27 +12,22 @@ var iuLocales = require("assets/stimuli/locale/iu/messages.json");
 var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     constructor: {
         value: function SAILS() {
-            // console.log(designToForceIncludeInMop);
-            this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
+            this.experimentalDesignSrc = "gris";
             this.super();
 
             this.stimuliDBname = "sails-fr-ca";
-            this.dbUrl = "https://corpusdev.example.org";
-            this.loadDesign(designToForceIncludeInMop);
+            this.loadDesign();
+            this.recordUsingMicrophoneOnly = true;
 
             this.canReplayStimuli = true;
             this.canPauseStimuli = true;
-
-            this.contextualizer.addMessagesToContextualizedStrings(enLocales, "en");
-            this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
-            this.contextualizer.addMessagesToContextualizedStrings(iuLocales, "iu");
 
             this.application.currentStimuliDialect = {
                 "iso": "fr",
                 "name": "French",
                 "nativeName": "français"
             };
-            this.contextualizer.currentLocale = this.application.currentStimuliDialect.iso;
+            this.contextualizer.currentLocale = this.application.currentStimuliDialect;
         }
     },
 
@@ -73,9 +62,9 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
                         imageFile: "placeholder.jpg",
                         carrierAudio: ""
                     };
-                    stimulus.prime.phonemic = stimulus.auditoryStimulus;
+                    stimulus.prime.utterance = stimulus.auditoryStimulus;
                     stimulus.prime.audio = stimulus.auditoryStimulus;
-                    stimulus.prime.orthographic = stimulus.auditoryStimulus;
+                    stimulus.prime.orthography = stimulus.auditoryStimulus;
                     delete stimulus.auditoryStimulus;
                     delete stimulus.transcription;
 
@@ -83,12 +72,12 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
                     delete stimulus.audioFile;
 
                     if (stimulus.response === "rxx") {
-                        stimulus.target.phonemic = "ʁχχ";
-                        stimulus.target.orthographic = "rxx";
-                        stimulus.prime.orthographic = "rxx";
+                        stimulus.target.utterance = "ʁχχ";
+                        stimulus.target.orthography = "rxx";
+                        stimulus.prime.orthography = "rxx";
                     } else {
-                        stimulus.target.phonemic = "*";
-                        stimulus.target.orthographic = "X";
+                        stimulus.target.utterance = "*";
+                        stimulus.target.orthography = "X";
                     }
                     delete stimulus.targetImage;
                     delete stimulus.distractorImages;
